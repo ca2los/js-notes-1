@@ -1,2 +1,2 @@
-// Variables
-// Empty boxes for storing data
+a = prompt('Tell me your age:');
+console.log(a);
