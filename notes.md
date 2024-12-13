@@ -1,5 +1,6 @@
 # Chapter 1
-Into programming is quick overview of a programing introduction to JavaScript based on the famous "You don't know JS" book series.
+Into programming is a quick overview of a programing introduction to JavaScript based on the famous "You don't know JS" book series. I don't 
+intend to commit plagiarism, and the purpose is the share my learning process from previous years for people interested in the language.
 
 ---
 ## Code
@@ -119,7 +120,6 @@ can vary over time as needed. Some programming languages prevent unintended valu
 
 However, JavaScript emphasize the type of value which means the value can change at any time. This is known as ***weak typing*** or 
 ***dynamic typing***, where the same variable can store different values. It's a flexible language and chaotic if used irresponsible.
-
 ````javascript
     var amount = 42;
     amount /= 2;
@@ -132,7 +132,6 @@ However, JavaScript emphasize the type of value which means the value can change
 
 There is an option to centralize the variable's value with ***constants*** avoiding different values. This type of variable must be declared 
 with capital letters and underscores `_` for blank spaces.
-
 ````javascript
     const TAX_RATE = .15;
     var amount = 42;
@@ -142,4 +141,38 @@ with capital letters and underscores `_` for blank spaces.
     
     amount = "$" + String(amount);
     console.log(amount.toFixed(2));
+````
+---
+
+## Blocks
+A block is defined by one or more statements inside curly braces `{...}` attached to control statements like ***Conditionals*** like 
+`if/else` and ***Loops***.
+````javascript
+    const SHIPPING_COST = 15;
+    var amount = 42;
+    amount *= 2;
+    if (amount < 100) {
+        amount += SHIPPING_COST;
+        console.log("$" + amount.toFixed(2));
+    } else {
+        console.log("$" + amount.toFixed(2));
+    }
+````
+Standalone blocks are valid but not commonly seen in JavaScript programs. The best practice is to attach blocks to control statements.
+---
+
+## Conditionals
+The `if` and `else` are conditional statements holding blocks with expressions. The `if` condition must be followed by a parenthesis `(...) 
+storing an expression ` which could return `true` or `false`. The `else` alternative is a backup clause for execution when the result doesn't 
+meet the expectations.
+````javascript
+    const TAX_RATE = .15;
+    var laptop = 5000;
+    var bank_account = 5100;
+    var cart = (laptop * TAX_RATE) + laptop;
+    if (cart <= bank_account) {
+        console.log("Thank you for your purchase.");
+    } else {
+        console.log("Insufficient credits.");
+    }
 ````
