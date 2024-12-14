@@ -130,8 +130,8 @@ However, JavaScript emphasize the type of value which means the value can change
     
 ````
 
-There is an option to centralize the variable's value with ***constants*** avoiding different values. This type of variable must be declared 
-with capital letters and underscores `_` for blank spaces.
+There is an option to centralize the variable's value with ***constants*** for avoiding different values. This type of variable must be 
+declared with capital letters and underscores `_` for blank spaces.
 ````javascript
     const TAX_RATE = .15;
     var amount = 42;
@@ -145,8 +145,8 @@ with capital letters and underscores `_` for blank spaces.
 ---
 
 ## Blocks
-A block is defined by one or more statements inside curly braces `{...}` attached to control statements like ***Conditionals*** like 
-`if/else` and ***Loops***.
+A block is defined by one or more statements inside curly braces `{...}` attached to control ***Conditional*** statements as `if/else` 
+and ***Loops***.
 ````javascript
     const SHIPPING_COST = 15;
     var amount = 42;
@@ -162,8 +162,8 @@ Standalone blocks are valid but not commonly seen in JavaScript programs. The be
 ---
 
 ## Conditionals
-The `if` and `else` are conditional statements holding blocks with expressions. The `if` condition must be followed by a parenthesis `(...) 
-storing an expression ` which could return `true` or `false`. The `else` alternative is a backup clause for execution when the result doesn't 
+The `if` and `else` conditional statements hold blocks with expressions. The `if` condition must be followed by a parenthesis `(...)` which 
+stores expressions that could return `true` or `false` values. The `else` alternative is a backup clause for execution when the result doesn't 
 meet the expectations.
 ````javascript
     const TAX_RATE = .15;
@@ -175,4 +175,76 @@ meet the expectations.
     } else {
         console.log("Insufficient credits.");
     }
+````
+
+## Loops
+Repeating an expression until the condition fails, or in other words, repeating only while the condition holds.
+
+### `while`
+This type of loop follows up the principle of *"repeating an expression until the condition fails"*. It's also valid to say *"repeating 
+the block with expression(s) until the result is no longer `true`"*. In here the conditional is tested before the first iteration.
+````javascript
+    var cart = 0;                           // The cart items are "0".
+    while (true) {                          // While the condition is true,
+        if ((cart <= 5) === false) {        // If the cart value is greater than "5",
+            break;                          // Then stop the iteration.
+        }
+        console.log(cart);                  
+        cart+=1;                            // Otherwise, keep counting, and print the valur in the console.
+    }
+````
+
+### `do ... while`
+This type of loop also follows up the principle of *"repeating an expression until the condition fails"*. It's also valid to say *"repeating 
+the block with expression(s) until the result is no longer `true`"*. In here the conditional is tested after the first iteration.
+````javascript
+    var cart = 0;                           // The cart items are "0".
+    do {
+        if ((cart <= 5) === false){         // If the cart items are greater than "5",
+            break;                          // Then stop the iteration.
+        }
+        console.log(cart);
+        cart+=1;                            // Otherwise, keep counting, and print the value in the console.
+    } while (true);                         // While the condition is true.
+````
+
+A more readable alternative for both `while` and `do ... while` examples is:
+````javascript
+    var cart = 0;                           // The cart items are "0".
+    while (true) {                          // While the condition is true,
+        if (cart > 5) {                     // If the cart is greater than "5".
+            break;                          // Then stop the iteration.
+        }
+        console.log(cart);
+        cart+=1;                            // Otherwise, keep counting, and print the value in the console.
+    }
+````
+
+### `for`
+This type of loop also follows the same principle as before, but the charm with this variant is how compact it is and easier to understand.
+````javascript
+    for (var cart = 0;cart < 6;cart+=1) {
+        console.log(cart);
+    }
+````
+---
+
+## Functions
+A function is a named section of code that can run every time it's called by name. In other words, a function is a named block statement 
+holding expressions.
+````javascript
+    function printAmount() {                        // The statement is function named as "printAmount" with no parameters,
+        console.log("$" + amount.toFixed(2));       // It contains an expression for printing a value in the console.
+    }
+    var amount = 99.99;                             // The variable's value is set after the function,
+    amount *= 2;                                    // The value will change,
+    printAmount();                                  // And the function is executed by it name.
+````
+````javascript
+    function cart(cost) {
+        console.log("$" + cost);
+    }
+    var price = 499.00;
+    price *= 2;
+    cart(price);
 ````

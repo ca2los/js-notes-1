@@ -1,33 +1,44 @@
-function greetUser(name) {
-    return `Welcome, ${name}!`;
+/**
+let storehouse = 10;
+for (let user_cart = 0;user_cart <= storehouse;user_cart++ ) {
+    console.log(user_cart);
+}**/
+
+/**
+let storehouse = 10;
+let user_cart = 0;
+while (true){
+    if (user_cart > storehouse) {
+        break;
+    }
+    console.log(user_cart);
+    user_cart++
+}**/
+
+/**
+let storehouse = 10;
+let user_cart = 0;
+do {
+    if (user_cart > storehouse) {
+        console.log("No more than 10 items.");
+        break;
+    }
+    console.log(user_cart);
+    user_cart++;
+} while (true);**/
+
+/**
+function printAmount() {                        // The statement is function named as "printAmount" with no parameters,
+    console.log("$" + amount.toFixed(2));
 }
-let greeting = greetUser("Carlos");
-console.log(greeting);
-
-
-// Conversion
-a = "42";
-b = Number(a);
-console.log(a);
-console.log(b);
-
-// Variables
-const SHIPPING_COST = 15;
-var amount = 42;
+let amount = 99.99;
 amount *= 2;
-if (amount < 100) {
-    amount += SHIPPING_COST;
-    console.log("$" + amount.toFixed(2));
-} else {
-    console.log("$" + amount.toFixed(2));
-}
+printAmount();**/
 
-const TAX_RATE = .15;
-var laptop = 5000;
-var bank_account = 5100;
-var cart = (laptop * TAX_RATE) + laptop;
-if (cart <= bank_account) {
-    console.log("Thank you for your purchase.");
-} else {
-    console.log("Insuffient credits.");
+function cart(cost) {
+    return "$" + cost;
 }
+let price = 499.00;
+price *= 2;
+cart(price);
+console.log(cart(price));
