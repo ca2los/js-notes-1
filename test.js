@@ -44,24 +44,20 @@ price *= 2;
 cart(price);
 console.log(cart(price));**/
 
-const SHIPPING_RATE = 45;
-const TAX_RATE = .15;
+// BBVA points earned
+"use strict";
 
-function shop(credits) {
+const BBVA_POINT = .1;
 
-    let ps5_console = 999;
-    let ps5_control = 99;
-    let ps5_headset = 150;
-
-    if (ps5_console <= credits) {
-        credits = receipt + ps5_console
-        //credits = credits - receipt
-        console.log("1 PS5 Console ordered")
-        console.log("Total USD $" + receipt.toFixed(2))
-    } else {
-        console.log("You don't have enough credits.")
-    }
+function annualPoints(mxn) {
+    do {
+        if (mxn === 0) {
+            break
+        }
+    } while (true);
+    total = userPoints * BBVA_POINT;
 }
-let gift_card = 2000;
-let receipt = 0;
-shop(gift_card);
+
+let userPoints = 4355;     // User's bank account
+let total= 0;               // Billing account
+annualPoints(total);
