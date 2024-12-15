@@ -8,7 +8,7 @@ The **program**, also referred as *source code* or just *code*, is a set of inst
 The **computer language** is the rules for valid format and combinations, also known as *syntax*.
 
 ### >Statements
-In the **computer language** *(also known as syntax)* the statements are groups of words, numbers, and operator that performs specific tasks.
+In the **computer language** *(also known as syntax)* the statements are groups of words, numbers, and operators to perform specific tasks.
 ````javascript
     a = b * 2;
     // The letters "a" and "b" are variables. Variables are empty boxes or symbolic placeholders for values of any type.
@@ -230,8 +230,8 @@ This type of loop also follows the same principle as before, but the charm with 
 ---
 
 ## Functions
-A function is a named section of code that can run every time it's called by name. In other words, a function is a named block statement 
-holding expressions.
+A function is a named section of code to invoke every time it's called by name. In other words, a function is a named block statement holding 
+expressions.
 ````javascript
     function printAmount() {                        // The statement is function named as "printAmount" with no parameters,
         console.log("$" + amount.toFixed(2));       // It contains an expression for printing a value in the console.
@@ -248,3 +248,7 @@ holding expressions.
     price *= 2;
     cart(price);
 ````
+
+## Scope
+The access level you can have to variables in a function or block. The inner code of the block can access to outer variables, however, 
+the outer expressions of the code cannot access to inner variables in the block.
