@@ -52,11 +52,13 @@ console.log(cart(price));**/
 "use strict";
 
 const TURKEY_TEMP = 50;
+const TURKEY_TIME = 90;
 
 function oven(temperature) {
     do {
         if (temperature > TURKEY_TEMP) {
             console.log("Oven temperature is ready!")
+            time(prepTime)
             break
         }
         console.log("Preheat temperature: ", temperature + "°C")
@@ -64,5 +66,18 @@ function oven(temperature) {
     } while (true)
 }
 
+function time(minutes) {
+    while (true) {
+        if (minutes >= TURKEY_TIME) {
+            console.log("The turkey is ready!")
+            break
+        }
+        console.log(minutes + " minute(s) lapsed")
+        minutes++
+    }
+}
+
 let currentTemperature = 0;     // User's bank account
+let prepTime = 0;
+
 oven(currentTemperature);
