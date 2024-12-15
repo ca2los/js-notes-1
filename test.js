@@ -44,20 +44,25 @@ price *= 2;
 cart(price);
 console.log(cart(price));**/
 
-// BBVA points earned
+// Intelligent oven
+// The user wants to cook a turkey for Christmas.
+// The oven pre-heat ideal temperature for turkey is 50°C.
+// Once the oven is ready at 50°C it's time to introduce the turkey for 90 minutes.
+
 "use strict";
 
-const BBVA_POINT = .1;
+const TURKEY_TEMP = 50;
 
-function annualPoints(mxn) {
+function oven(temperature) {
     do {
-        if (mxn === 0) {
+        if (temperature > TURKEY_TEMP) {
+            console.log("Oven temperature is ready!")
             break
         }
-    } while (true);
-    total = userPoints * BBVA_POINT;
+        console.log("Preheat temperature: ", temperature + "°C")
+        temperature++
+    } while (true)
 }
 
-let userPoints = 4355;     // User's bank account
-let total= 0;               // Billing account
-annualPoints(total);
+let currentTemperature = 0;     // User's bank account
+oven(currentTemperature);
