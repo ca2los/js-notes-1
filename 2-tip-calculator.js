@@ -12,10 +12,10 @@ function checkout(total) {
     if (tip === LOW_TIP || tip === REG_TIP || tip === TOP_TIP) {
         total += (total * tip)
         console.log("Total: USD$", total)
-        console.log("Tip of", tip,"% included.")
+        console.log("Tip of", (tip*100),"% included.")
         checkoutHosts(total)
     } else {
-        console.log("Define the value of tip.")
+        console.log("Define the tip value.")
     }
 }
 
@@ -26,11 +26,11 @@ function checkoutHosts(total) {
     } else if (Number(hosts) === 1) {
         console.log("Don't split the check.")
     } else {
-        console.log("Define the value of hosts.")
+        console.log("Define the hosts value.")
     }
 }
 
-let ticket = "400.00"   // Input value (always string) by default is "0".
-let hosts = "1"       // Input value (always string) by default is "0".
+let billTotal = "400.00"   // Input value (always string) by default is "0".
+let hosts = "2"       // Input value (always string) by default is "0".
 let tip = TOP_TIP       // Constant value (selected) by default is "REG_TIP"
-checkout(Number(ticket));
+checkout(Number(billTotal));

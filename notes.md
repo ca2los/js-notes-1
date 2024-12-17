@@ -159,6 +159,7 @@ and ***Loops***.
     }
 ````
 Standalone blocks are valid but not commonly seen in JavaScript programs. The best practice is to attach blocks to control statements.
+
 ---
 
 ## Conditionals
@@ -252,3 +253,10 @@ expressions.
 ## Scope
 The access level you can have to variables in a function or block. The inner code of the block can access to outer variables, however, 
 the outer expressions of the code cannot access to inner variables in the block.
+
+---
+
+# Chapter 2
+
+## Variables & Types
+Javascript has 6 type of variable's values. 
