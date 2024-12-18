@@ -259,4 +259,31 @@ the outer expressions of the code cannot access to inner variables in the block.
 # Chapter 2
 
 ## Variables & Types
-Javascript has 6 type of variable's values. 
+Since ES6 (ECMA 6), Javascript has 6 type of variable's values such as `string`, `number`, `null`, `undefined`, 
+`object`, `boolean`, and `symbol`. 
+````javascript
+    var a;              
+    typeof a;           // -> Undefined
+
+    var b = undefined;
+    typeof b;           // -> Undefined
+
+    var c =  42
+    typeof c;           // -> Number
+
+    var d = true
+    typeof d;           // -> Boolean
+
+    var e = false
+    typeof e;           // -> Boolean
+
+    var f = "Hello"
+    typeof f;           // -> String
+
+    var g = null
+    typeof g;           // -> Object (bug!)
+
+    var h = {j:"k"}
+    typeof h;           // -> Object
+````
+
