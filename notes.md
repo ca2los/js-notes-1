@@ -1,4 +1,4 @@
-# Chapter 1
+## Chapter 1
 Into programming is a quick overview of a programing introduction to JavaScript based on the famous "You don't know JS" book series. I don't 
 intend to commit plagiarism, and the purpose is the share my learning process from previous years for people interested in the language.
 
@@ -7,7 +7,7 @@ intend to commit plagiarism, and the purpose is the share my learning process fr
 The **program**, also referred as *source code* or just *code*, is a set of instructions to tell the computer what tasks to perform. 
 The **computer language** is the rules for valid format and combinations, also known as *syntax*.
 
-### >Statements
+#### >Statements
 In the **computer language** *(also known as syntax)* the statements are groups of words, numbers, and operators to perform specific tasks.
 ````javascript
     a = b * 2;
@@ -19,7 +19,7 @@ In the **computer language** *(also known as syntax)* the statements are groups 
 The previous statement tells the computer to retrieve the value of `b`, multiply it by `2`, and store the result inside `a`. In other words, 
 **programs** are collections of **statements** to perform tasks.
 
-### >Expressions
+#### >Expressions
 Statements are made of one or more expressions, which are variables or numbers combined with operators.
 ````javascript
     a = b * 2;
@@ -35,12 +35,12 @@ When a statement is not stored inside a variable then it's called ***expression 
     // The expression statement is not useful.
 ````
 
-### >Executing a Program
+#### >Executing a Program
 Everytime the program is executed, the collection of statements are interpreted or compiled by the computer to understand the code. 
 - Interpreting the code: The language is translated from top to bottom, line by line, everytime the program is run.
 - Compiling the code: The language is translated ahead of time so when the program runs later, then the code is ready to go.
 
-### >Output
+#### >Output
 The output is the value you print to the user interface.
 ```javascript
     var a = 40;
@@ -48,7 +48,7 @@ The output is the value you print to the user interface.
     console.log(b);
     // The output in the browser's consoles is "80".
 ```
-### >Input
+#### >Input
 The input is the value typed by the user to the console.
 ````javascript
     age = prompt("Tell me you age:");
@@ -57,7 +57,7 @@ The input is the value typed by the user to the console.
 ````
 ---
 
-## Operators
+### Operators
 To perform actions between variables and values it's necessary to use operators. 
 
 - Assignment `=` is used to retrieve the values.
@@ -70,7 +70,7 @@ To perform actions between variables and values it's necessary to use operators.
 - Object property is `.` and it's used to access properties inside object values like `obj.a` or `obj["a"]`.
 ---
 
-## Values & Types
+### Values & Types
 There are different type of values in programming terminology, and JavaScript has some built-in types for these *primitive values*.
 
 - For mathematical expressions, then you'll need `number` values.
@@ -83,7 +83,7 @@ There are different type of values in programming terminology, and JavaScript ha
     true;                   // Boolean
 ````
 
-### >Coercion
+#### >Coercion
 In JavaScript there's an option for values *conversion* know as ***coercion***, and it has built-in functions for different scenarios like 
 `Number(...)`. This built-in function is helpful for converting `strings` values into `number` values when the situation allows it.
 ````javascript
@@ -103,7 +103,7 @@ mistakes in the future.
 ````
 ---
 
-## Comments
+### Comments
 It's possible to code comment a program with *single line code comments* and *multiple line comments*.
 ````javascript
     42; // This is a single line comment
@@ -113,7 +113,7 @@ It's possible to code comment a program with *single line code comments* and *mu
 ````
 ---
 
-## Variables
+### Variables
 Variables are also known as *symbolic placeholders* or *symbolic containers* to store values. The term of ***variable*** implies the value 
 can vary over time as needed. Some programming languages prevent unintended value conversions also known as ***static programming*** or 
 ***type enforcement*** by defining ***the type of variable***.
@@ -144,7 +144,7 @@ declared with capital letters and underscores `_` for blank spaces.
 ````
 ---
 
-## Blocks
+### Blocks
 A block is defined by one or more statements inside curly braces `{...}` attached to control ***Conditional*** statements as `if/else` 
 and ***Loops***.
 ````javascript
@@ -162,7 +162,7 @@ Standalone blocks are valid but not commonly seen in JavaScript programs. The be
 
 ---
 
-## Conditionals
+### Conditionals
 The `if` and `else` conditional statements hold blocks with expressions. The `if` condition must be followed by a parenthesis `(...)` which 
 stores expressions that could return `true` or `false` values. The `else` alternative is a backup clause for execution when the result doesn't 
 meet the expectations.
@@ -178,10 +178,10 @@ meet the expectations.
     }
 ````
 
-## Loops
+### Loops
 Repeating an expression until the condition fails, or in other words, repeating only while the condition holds.
 
-### `while`
+#### `while`
 This type of loop follows up the principle of *"repeating an expression until the condition fails"*. It's also valid to say *"repeating 
 the block with expression(s) until the result is no longer `true`"*. In here the conditional is tested before the first iteration.
 ````javascript
@@ -195,7 +195,7 @@ the block with expression(s) until the result is no longer `true`"*. In here the
     }
 ````
 
-### `do ... while`
+#### `do ... while`
 This type of loop also follows up the principle of *"repeating an expression until the condition fails"*. It's also valid to say *"repeating 
 the block with expression(s) until the result is no longer `true`"*. In here the conditional is tested after the first iteration.
 ````javascript
@@ -221,7 +221,7 @@ A more readable alternative for both `while` and `do ... while` examples is:
     }
 ````
 
-### `for`
+#### `for`
 This type of loop also follows the same principle as before, but the charm with this variant is how compact it is and easier to understand.
 ````javascript
     for (var cart = 0;cart < 6;cart+=1) {
@@ -230,7 +230,7 @@ This type of loop also follows the same principle as before, but the charm with 
 ````
 ---
 
-## Functions
+### Functions
 A function is a named section of code to invoke every time it's called by name. In other words, a function is a named block statement holding 
 expressions.
 ````javascript
@@ -250,15 +250,15 @@ expressions.
     cart(price);
 ````
 
-## Scope
+### Scope
 The access level you can have to variables in a function or block. The inner code of the block can access to outer variables, however, 
 the outer expressions of the code cannot access to inner variables in the block.
 
 ---
 
-# Chapter 2
+## Chapter 2
 
-## Variables & Types
+### Variables & Types
 Since ES6 (ECMA 6), Javascript has 6 type of variable's values such as `string`, `number`, `null`, `undefined`, 
 `object`, `boolean`, and `symbol`. 
 ````javascript
@@ -285,5 +285,19 @@ Since ES6 (ECMA 6), Javascript has 6 type of variable's values such as `string`,
 
     var h = {j:"k"}
     typeof h;           // -> Object
+````
+
+### Objects
+
+The object is a compound value to set properties (named locations) with their own values of any type.
+````javascript
+    var obj = {                 // The variable has block with a compound value
+        a: "Hello world!",      // String value
+        b: 1986,                // Number value
+        c: true                 // Boolean value and store any type of value
+    }   
+    
+    obj.a                       // Join the name of the objetc to name of the property with a dot.
+    obj["b"]                    // Join the name of the object with brackets and double quotes to access the property.
 ````
 
