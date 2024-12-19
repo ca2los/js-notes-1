@@ -3,11 +3,11 @@ Into programming is a quick overview of a programing introduction to JavaScript 
 intend to commit plagiarism, and the purpose is the share my learning process from previous years for people interested in the language.
 
 ---
-## Code
+### Code
 The **program**, also referred as *source code* or just *code*, is a set of instructions to tell the computer what tasks to perform. 
 The **computer language** is the rules for valid format and combinations, also known as *syntax*.
 
-#### >Statements
+#### Statements
 In the **computer language** *(also known as syntax)* the statements are groups of words, numbers, and operators to perform specific tasks.
 ````javascript
     a = b * 2;
@@ -19,7 +19,7 @@ In the **computer language** *(also known as syntax)* the statements are groups 
 The previous statement tells the computer to retrieve the value of `b`, multiply it by `2`, and store the result inside `a`. In other words, 
 **programs** are collections of **statements** to perform tasks.
 
-#### >Expressions
+#### Expressions
 Statements are made of one or more expressions, which are variables or numbers combined with operators.
 ````javascript
     a = b * 2;
@@ -35,12 +35,12 @@ When a statement is not stored inside a variable then it's called ***expression 
     // The expression statement is not useful.
 ````
 
-#### >Executing a Program
+#### Executing a Program
 Everytime the program is executed, the collection of statements are interpreted or compiled by the computer to understand the code. 
 - Interpreting the code: The language is translated from top to bottom, line by line, everytime the program is run.
 - Compiling the code: The language is translated ahead of time so when the program runs later, then the code is ready to go.
 
-#### >Output
+#### Output
 The output is the value you print to the user interface.
 ```javascript
     var a = 40;
@@ -48,7 +48,7 @@ The output is the value you print to the user interface.
     console.log(b);
     // The output in the browser's consoles is "80".
 ```
-#### >Input
+#### Input
 The input is the value typed by the user to the console.
 ````javascript
     age = prompt("Tell me you age:");
@@ -83,7 +83,7 @@ There are different type of values in programming terminology, and JavaScript ha
     true;                   // Boolean
 ````
 
-#### >Coercion
+#### Coercion
 In JavaScript there's an option for values *conversion* know as ***coercion***, and it has built-in functions for different scenarios like 
 `Number(...)`. This built-in function is helpful for converting `strings` values into `number` values when the situation allows it.
 ````javascript
@@ -288,7 +288,6 @@ Since ES6 (ECMA 6), Javascript has 6 type of variable's values such as `string`,
 ````
 
 ### Objects
-
 The object is a compound value to set properties (named locations) with their own values of any type.
 ````javascript
     var obj = {                 // The variable has block with a compound value
@@ -301,3 +300,34 @@ The object is a compound value to set properties (named locations) with their ow
     obj["b"]                    // Join the name of the object with brackets and double quotes to access the property.
 ````
 
+#### Arrays
+They are objects holding multiple values of any type in a numerically indexed position. It means the properties are not considered in 
+this syntax.
+````javascript
+    var arr = [              // It starts with square brackets
+        "Hello world!",      // String value
+        1986,                // Number value
+        true                 // Boolean value and store any type of value     
+    ]   
+    
+    arr[0]                   // "Hello world!"
+    arr[1]                   // 1986
+    arr[2]                   // true
+    arr.length               // 3 
+    typeof arr               // Object
+````
+
+#### Functions
+The functions are another type of object in limited cases. In the following example, the `counter.message` is an example of an object 
+because the function name and the property are joined by one dot.
+````javascript
+    function counter() {
+        return 1986;
+    }
+    
+    counter.message = "Type a new year"
+    
+    typeof counter              // Function
+    typeof counter()            // Number
+    typeof counter.message      // String
+````
