@@ -10,5 +10,5 @@ let obj = {        // Object storing compound values
 let f = "e";       // New variable to access an object's property
 
 console.log(obj.a,obj["b"],obj.c,obj["d"],obj.e) // Access to the object's properties
-console.log(obj[f])   // The new variable access to one of the object´s properties
-console.log(f)  // The new variable will retrieve the string and not the object's value.
+console.log(obj[f]) // The new variable access to one of the object´s properties
+console.log(f) // The new variable will retrieve the string and not the object's value

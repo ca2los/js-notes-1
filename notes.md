@@ -329,5 +329,39 @@ because the function name and the property are joined by one dot.
     
     typeof counter              // Function
     typeof counter()            // Number
-    typeof counter.message      // String
+    typeof counter.message      // String -> However, the variable structure relates to an Object.
+````
+
+### Built-In Type Methods
+They are exposed as properties and methods that are powerful. 
+````javascript
+    var a = "Mass Effect"
+    var b = 29.79458
+
+    a.length                // 11
+    a.toUpperCase()         // MASS EFFECT
+    b.toFixed(3)            // 29.795
+````
+
+### Comparing Values
+The two type of main comparisons in JS are **equality** and **inequality**. Both results will be boolean, between `true` and `false` 
+values.
+
+#### Coercion
+The coercion of values could be explicit or implicit when the values are loose equal. 
+````javascript
+    // Explicit Coercion
+    var a = "1986"
+    var b = Number(a)   // The `Number()` method is an explicit instruction to convert the string value into a number.
+
+    console.log(a)      // "1986"  -> String value
+    console.log(b)      // 1986    -> Number value corced explicitly by the `Number()` method
+````
+````javascript
+    // Implicit Coercion
+    var a = "1986"
+    var b = a * 1       // The mathematical operation is an implicit coercion of variable "a"
+
+    console.log(a)      // "1986"  -> String value
+    console.log(b)      // 1986    -> Number value coerced into number without methods
 ````
