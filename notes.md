@@ -378,3 +378,10 @@ and strict not equal operator `!==` will be true only if the value and type are 
 
 #### Inequality
 The concept relates to the `<`, `>`, `<=`, and `>=` operators to compare between numbers to obtain `true` and `false` values.
+
+### Variables
+Variables should be named with valid identifiers an avoiding *reserved words* of JS syntax. The use of letters from `a-z`, `A-Z`, 
+`0-9`, `_`, and `$` are allowed.
+
+#### Function scopes
+The `var` keyword is used to declare a variable inside a function scope.
