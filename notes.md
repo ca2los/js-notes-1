@@ -365,3 +365,16 @@ The coercion of values could be explicit or implicit when the values are loose e
     console.log(a)      // "1986"  -> String value
     console.log(b)      // 1986    -> Number value coerced into number without methods
 ````
+
+#### Truthy & Falsy
+
+The ***truthy*** and ***falsy*** concept is allowed when a non-boolean values is coerced to a boolean value. The falsy values are 
+`""`, `0`, `-0`, `NaN`, `null`,`undefined`, and `false`. Anything else is truthy.
+
+#### Equality
+The loose equal `==` and loose not equal `!=` operators relies on the coercion to return `true` of `false`. The strict equal `===` 
+and strict not equal operator `!==` will be true only if the value and type are the same. In other words, if the value must be 
+`true` or `false`, `0`, `""`, or `[]` then use strict equal `===`. For anything else use loose equal `==`.
+
+#### Inequality
+The concept relates to the `<`, `>`, `<=`, and `>=` operators to compare between numbers to obtain `true` and `false` values.
