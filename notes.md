@@ -409,3 +409,53 @@ This concept is when a variable is declared inside a function and make it access
 ````
 
 It's possible to declare variables to belong to individual blocks with the `let` keyword.
+````javascript
+    function foo() {
+        var a = 1   // The variable "a" belongs to the complete "function".
+        if (a >= 1) {
+            let b = 2   // The variable "b" belongs only to the "if" condition.
+            while (b < 5) {
+                let c = b * 2   // The variable "c" belongs only to the "while" loop.
+                b++
+                console.log(a + c)
+            }
+        }
+    }
+    foo()
+````
+
+### Conditionals
+Another conditional mechanism is the `if`, `if else`, and `else` statement.
+````javascript
+    if (a == 2) {
+        // Do something if...    
+    } else if (a == 10) {
+        // Do something else if...
+    } else {
+        // Otherwirse do else.
+    }   
+````
+Another simpler solution is the `switch` condition where the execution stops until the match is true.
+````javascript
+    switch (a) {
+        case 2:     // If the match is "2" then stop at break, otherwise continue. 
+            break; 
+        case 10:    // If the match is "10" then stop at break, otherwise continue. 
+            break;
+        case 100:   // If the match is "100" then stop at break, otherwise continue.
+            break;
+        default:    // Otherwirse do else.
+    }
+````
+The **"ternary operator"** or **"conditional operator"** is a concise form of conditional similar to de `if`/`else` condition.
+````javascript
+    var a = 2
+    var b = (a > 1986) ? "Hello" : "World"
+    /** Similar to...
+    if (a > 1986) {
+            var b = "Hello"
+        } else {
+            var b = "World"
+    }
+    **/
+````
