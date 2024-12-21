@@ -385,3 +385,27 @@ Variables should be named with valid identifiers an avoiding *reserved words* of
 
 #### Function scopes
 The `var` keyword is used to declare a variable inside a function scope.
+
+##### Hoisting
+This concept is when a variable is declared inside a function and make it accessible only through the function.
+````javascript
+    var a = 1
+    function foo() {
+        var b = 2
+        function bar() {
+            var c = 3
+            function baz() {
+                var d = 4
+                console.log(a, b, c, d)     // 1,2,3,4
+            }
+            baz()
+            console.log(a, b, c)    // 1,2,3
+        }
+        bar()
+        console.log(a, b)   // 1,2
+    }
+    foo()
+    console.log(a)  // 1
+````
+
+It's possible to declare variables to belong to individual blocks with the `let` keyword.
