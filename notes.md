@@ -380,7 +380,7 @@ and strict not equal operator `!==` will be true only if the value and type are 
 The concept relates to the `<`, `>`, `<=`, and `>=` operators to compare between numbers to obtain `true` and `false` values.
 
 ### Variables
-Variables should be named with valid identifiers an avoiding *reserved words* of JS syntax. The use of letters from `a-z`, `A-Z`, 
+Variables should be named with valid identifiers and avoiding *reserved words* of JS syntax. The use of letters from `a-z`, `A-Z`, 
 `0-9`, `_`, and `$` are allowed.
 
 #### Function scopes
@@ -458,4 +458,33 @@ The **"ternary operator"** or **"conditional operator"** is a concise form of co
             var b = "World"
     }
     **/
+````
+
+### Functions as values
+It's possible to attach functions as variable's values. They could be anonymous functions or named functions, both are very common 
+but the best practice is to assign a name.
+````javascript
+    var foo = function (){}     // Anonymous function
+    var bar = function baz(){}  // Named function
+````
+
+#### Immediately Invoked Functions (IFFEs)
+This type of function will be executed right away. IFFEs should be used to declare variables that won't affect the 
+surrounding code outside.
+````javascript
+    function bar(){
+        console.log("Regular function")
+    }
+    bar()
+
+    (function baz(){
+        console.log("IFFE function")
+    })()
+````
+IFFEs can also have `return` values.
+````javascript
+    var x = (function bar(){
+        return 1986    
+    })()
+    console.log(x)  // 1986
 ````
