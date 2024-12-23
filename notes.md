@@ -505,3 +505,13 @@ It's a way of remembering and access a function's scope even after the execution
     add20(200)  // The "y" value
     add30(300)  // The "y" value
 ````
+
+### This
+When a function includes the identifier is usually aa a reference that points to an object.
+````javascript
+    function foo() {
+        console.log(this.bar)
+    }
+    var bar = "Retrieved by 'this' identifier."
+    foo()
+````
