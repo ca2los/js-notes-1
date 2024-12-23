@@ -425,7 +425,7 @@ It's possible to declare variables to belong to individual blocks with the `let`
 ````
 
 ### Conditionals
-Another conditional mechanism is the `if`, `if else`, and `else` statement.
+Another conditional mechanism is the `if`, `else if`, and `else` statement.
 ````javascript
     if (a == 2) {
         // Do something if...    
@@ -487,4 +487,21 @@ IFFEs can also have `return` values.
         return 1986    
     })()
     console.log(x)  // 1986
+````
+#### Closure
+It's a way of remembering and access a function's scope even after the execution of the function.
+````javascript
+    function mathOperation(x){      // You set the function and the parameter to pass in
+       function addValues(y) {      // You set a second function and the second parameter to pass in
+           return x + y             // Return an operation between both arguments
+       }
+       return addValues             // Return the results of both arguments to each variable
+    }
+    var add10 = mathOperation(10)   // 10 is the "x" value
+    var add20 = mathOperation(20)   // 20 is the "x" value  
+    var add30 = mathOperation(30)   // 30 is the "x" value
+    
+    add10(100)  // The "y" value              
+    add20(200)  // The "y" value
+    add30(300)  // The "y" value
 ````
