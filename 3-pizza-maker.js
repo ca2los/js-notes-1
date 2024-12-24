@@ -21,7 +21,7 @@ function selectIngredients(hasType) {
     console.log("USD $", total.toFixed(2))
 }
 
-function checkoutOrder (hasType) {
+function checkoutOrder(hasType) {
     let customize = prompt("Do you want to add more ingredients?")
     if (customize.toUpperCase() === "YES" || customize.toUpperCase() === "Y") {
         selectIngredients(hasType)
@@ -41,6 +41,14 @@ let pizza = {
 let selection = pizza["italian"]
 checkoutOrder(selection)
 
+/* Improvements
+    1. Prompt for adding toppings
+    2. Add "Done" once the topping has been added
+    3. Loop to ask if you want to add more items
+    4. Function for a shared mathematical operation
+    5. Deal with more options than "Yes" in the Prompt message
+    6. Rename "hasType" into something more obvious like "pizzaPrice"
+*/
 
 /**let obj = {        // Object storing compound values
     a: "Hello World",       // Property with a string value
