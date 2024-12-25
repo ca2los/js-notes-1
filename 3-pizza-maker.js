@@ -48,6 +48,7 @@ checkoutOrder(selection)
     4. Function for a shared mathematical operation
     5. Deal with more options than "Yes" in the Prompt message
     6. Rename "pizzaPrice" into something more obvious like "pizzaPrice"
+    7. More pizza types
 */
 
 /**let obj = {        // Object storing compound values
