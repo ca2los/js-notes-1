@@ -6,7 +6,7 @@
 
 const DELIVERY_TIP = .12
 
-function selectIngredients(hasType) {
+function selectIngredients(pizzaPrice) {
     let ingredients = {
         mozzarella: 4,
         mushrooms: 3,
@@ -16,17 +16,17 @@ function selectIngredients(hasType) {
         salami: 2,
         sausage: 2
     }
-    let customPizza = hasType + ingredients.mozzarella + ingredients.mushrooms
+    let customPizza = pizzaPrice + ingredients.mozzarella + ingredients.mushrooms
     let total = customPizza + (customPizza * DELIVERY_TIP)
     console.log("USD $", total.toFixed(2))
 }
 
-function checkoutOrder(hasType) {
+function checkoutOrder(pizzaPrice) {
     let customize = prompt("Do you want to add more ingredients?")
     if (customize.toUpperCase() === "YES" || customize.toUpperCase() === "Y") {
-        selectIngredients(hasType)
+        selectIngredients(pizzaPrice)
     } else {
-        let total = hasType + (hasType * DELIVERY_TIP)
+        let total = pizzaPrice + (pizzaPrice * DELIVERY_TIP)
         console.log("USD $", total.toFixed(2))
     }
 }
@@ -47,7 +47,7 @@ checkoutOrder(selection)
     3. Loop to ask if you want to add more items
     4. Function for a shared mathematical operation
     5. Deal with more options than "Yes" in the Prompt message
-    6. Rename "hasType" into something more obvious like "pizzaPrice"
+    6. Rename "pizzaPrice" into something more obvious like "pizzaPrice"
 */
 
 /**let obj = {        // Object storing compound values
