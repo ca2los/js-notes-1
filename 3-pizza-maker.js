@@ -6,6 +6,11 @@
 
 const DELIVERY_TIP = .12
 
+function checkoutOrder(pizzaInput) {
+    pizzaInput = pizzaInput + (pizzaInput * DELIVERY_TIP)
+    console.log("Total USD $", pizzaInput.toFixed(2))
+}
+
 function selectIngredients(pizzaInput) {
     let ingredients = {
         mozzarella: 4,
@@ -15,31 +20,32 @@ function selectIngredients(pizzaInput) {
     while (true) {
         let customize = prompt("Mozzarella, Mushrooms, and Olives. Enter the ingredient(s) name of your choice:");
         if (customize.toLowerCase() === "mozzarella") {
+            console.log("Extra Mozzarella (x1): Yes")
             pizzaInput = pizzaInput + ingredients.mozzarella
         }
         else if (customize.toLowerCase() === "mushrooms") {
+            console.log("Extra Mushrooms (x1): Yes")
             pizzaInput = pizzaInput + ingredients.mushrooms
         }
         else if (customize.toLowerCase() === "olives") {
+            console.log("Extra Olives (x1): Yes")
             pizzaInput = pizzaInput + ingredients.olives
         }
         else {
+            console.log("No more extra ingredients.")
             checkoutOrder(pizzaInput);
             break
         }
     }
 }
 
-function checkoutOrder(pizzaInput) {
-    pizzaInput = pizzaInput + (pizzaInput * DELIVERY_TIP)
-    console.log("USD $", pizzaInput.toFixed(2))
-}
-
 function checkoutReview(pizzaInput) {
-    let customize = prompt("Do you want to add more ingredients?")
+    let customize = prompt("Do you want extra ingredients?")
     if (customize.toUpperCase() === "YES" || customize.toUpperCase() === "Y") {
+        console.log("Extra Ingredients: Yes")
         selectIngredients(pizzaInput)
     } else {
+        console.log("Extra Ingredients: No")
         checkoutOrder(pizzaInput)
     }
 }
@@ -52,13 +58,30 @@ function pizzaName(pizzaInput) {
         mexican: 22.99,
         traditional: 23.50
     }
-    if (pizzaInput.toUpperCase() === types_of_pizza.cheese ||
-        pizzaInput.toUpperCase() === types_of_pizza.hawaiian ||
-        pizzaInput.toUpperCase() === types_of_pizza.italian ||
-        pizzaInput.toUpperCase() === types_of_pizza.mexican ||
-        pizzaInput.toUpperCase() === types_of_pizza.traditional
-    ) {
-        checkoutReview(pizzaInput)
+    while (true) {
+        if (pizzaInput.toLowerCase() === "cheese") {
+            console.log("Pizza type: Cheese")
+            checkoutReview(pizzaInput = types_of_pizza.cheese)
+        }
+        else if (pizzaInput.toLowerCase() === "hawaiian") {
+            console.log("Pizza type: Hawaiian")
+            checkoutReview(pizzaInput = types_of_pizza.hawaiian)
+        }
+        else if (pizzaInput.toLowerCase() === "italian") {
+            console.log("Pizza type: Italian")
+            checkoutReview(pizzaInput = types_of_pizza.italian)
+        }
+        else if (pizzaInput.toLowerCase() === "mexican") {
+            console.log("Pizza type: Mexican")
+            checkoutReview(pizzaInput = types_of_pizza.mexican)
+        }
+        else if (pizzaInput.toLowerCase() === "traditional") {
+            console.log("Pizza type: Traditional")
+            checkoutReview(pizzaInput = types_of_pizza.traditional)
+        }
+        else {
+            break
+        }
     }
 }
 
@@ -66,13 +89,13 @@ let selection = prompt("Enter the type of pizza you want to order:")
 pizzaName(selection)
 
 /* Improvements
-    1. Prompt for adding toppings
-    2. Add "Done" once the topping has been added
-    3. Loop to ask if you want to add more items
-    4. Function for a shared mathematical operation
+    1. Prompt for adding toppings -> DONE
+    2. Add "Done" once the topping has been added -> DONE
+    3. Loop to ask if you want to add more items -> DONE
+    4. Function for a shared mathematical operation -> DONE
     5. Deal with more options than "Yes" in the Prompt message
-    6. Rename "pizzaPrice" into something more obvious like "pizzaPrice"
-    7. More pizza types
+    6. Rename "pizzaPrice" into something more obvious like "pizzaPrice" -> DONE
+    7. More pizza types -> DONE
 */
 
 /**let obj = {        // Object storing compound values
