@@ -9,37 +9,54 @@ const DELIVERY_TIP = .12
 function selectIngredients(pizzaPrice) {
     let ingredients = {
         mozzarella: 4,
-        mushrooms: 3,
-        olives: 3,
+        mushroom: 3,
+        olive: 3,
         onion: 2,
         pepperoni: 2,
         salami: 2,
         sausage: 2
     }
+    /*
     let customPizza = pizzaPrice + ingredients.mozzarella + ingredients.mushrooms
     let total = customPizza + (customPizza * DELIVERY_TIP)
     console.log("USD $", total.toFixed(2))
+     */
 }
 
-function checkoutOrder(pizzaPrice) {
+function checkoutMath(pizzaInput) {
+    let total = pizzaInput + (pizzaInput * DELIVERY_TIP)
+    console.log("USD $", total.toFixed(2))
+}
+
+function checkoutOrder(pizzaInput) {
     let customize = prompt("Do you want to add more ingredients?")
     if (customize.toUpperCase() === "YES" || customize.toUpperCase() === "Y") {
-        selectIngredients(pizzaPrice)
+        selectIngredients(pizzaInput)
     } else {
-        let total = pizzaPrice + (pizzaPrice * DELIVERY_TIP)
-        console.log("USD $", total.toFixed(2))
+        checkoutMath(pizzaInput)
     }
 }
 
-let pizza = {
-    cheese: 21.50,
-    hawaiian: 20.50,
-    italian: 25.99,
-    mexican: 22.99,
-    traditional: 23.50
+function pizzaName(pizzaInput) {
+    let types_of_pizza = {
+        cheese: 21.50,
+        hawaiian: 20.50,
+        italian: 25.99,
+        mexican: 22.99,
+        traditional: 23.50
+    }
+    if (pizzaInput.toUpperCase() === types_of_pizza.cheese ||
+        pizzaInput.toUpperCase() === types_of_pizza.hawaiian ||
+        pizzaInput.toUpperCase() === types_of_pizza.italian ||
+        pizzaInput.toUpperCase() === types_of_pizza.mexican ||
+        pizzaInput.toUpperCase() === types_of_pizza.traditional
+    ) {
+        checkoutOrder(pizzaInput)
+    }
 }
-let selection = pizza["italian"]
-checkoutOrder(selection)
+
+let selection = prompt("Enter the type of pizza you want to order:")
+pizzaName(selection)
 
 /* Improvements
     1. Prompt for adding toppings
