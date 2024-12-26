@@ -17,18 +17,16 @@ function selectIngredients(pizzaInput) {
         mushrooms: 3,
         olives: 3
     }
-    let toppings = prompt("Select Mozzarella, Mushrooms, Olives, or enter DONE to checkout.");
     while (true) {
-        if (toppings.toLowerCase() === "done") {
+        let toppings = prompt("only Mozzarella, Mushrooms, Olives, or enter DONE to checkout.").toLowerCase();
+        if (toppings === "done") {
             console.log("No more extra ingredients")
             checkoutOrder(pizzaInput)
             break
-        }
-        else if (toppings.toLowerCase() === ingredients[toppings.toLowerCase()]) {
+        } else if (ingredients.hasOwnProperty(toppings)) {      // The method looks for properties instead of using equality operators
             console.log(`Extra ${toppings} (x1): Yes`)
-            pizzaInput = pizzaInput + ingredients[toppings.toLowerCase()]
-        } else {
-            prompt("Ingredient unavailable, only Mozzarella, Mushrooms, Olives, or enter DONE to checkout.")
+            pizzaInput = pizzaInput + ingredients[toppings]
+        } else if (!ingredients.hasOwnProperty(toppings)) {
             console.log("Ingredient unavailable.")
         }
     }
