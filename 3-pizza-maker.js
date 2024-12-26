@@ -6,34 +6,41 @@
 
 const DELIVERY_TIP = .12
 
-function selectIngredients(pizzaPrice) {
+function selectIngredients(pizzaInput) {
     let ingredients = {
         mozzarella: 4,
-        mushroom: 3,
-        olive: 3,
-        onion: 2,
-        pepperoni: 2,
-        salami: 2,
-        sausage: 2
+        mushrooms: 3,
+        olives: 3
     }
-    /*
-    let customPizza = pizzaPrice + ingredients.mozzarella + ingredients.mushrooms
-    let total = customPizza + (customPizza * DELIVERY_TIP)
-    console.log("USD $", total.toFixed(2))
-     */
-}
-
-function checkoutMath(pizzaInput) {
-    let total = pizzaInput + (pizzaInput * DELIVERY_TIP)
-    console.log("USD $", total.toFixed(2))
+    while (true) {
+        let customize = prompt("Mozzarella, Mushrooms, and Olives. Enter the ingredient(s) name of your choice:");
+        if (customize.toLowerCase() === "mozzarella") {
+            pizzaInput = pizzaInput + ingredients.mozzarella
+        }
+        else if (customize.toLowerCase() === "mushrooms") {
+            pizzaInput = pizzaInput + ingredients.mushrooms
+        }
+        else if (customize.toLowerCase() === "olives") {
+            pizzaInput = pizzaInput + ingredients.olives
+        }
+        else {
+            checkoutOrder(pizzaInput);
+            break
+        }
+    }
 }
 
 function checkoutOrder(pizzaInput) {
+    pizzaInput = pizzaInput + (pizzaInput * DELIVERY_TIP)
+    console.log("USD $", pizzaInput.toFixed(2))
+}
+
+function checkoutReview(pizzaInput) {
     let customize = prompt("Do you want to add more ingredients?")
     if (customize.toUpperCase() === "YES" || customize.toUpperCase() === "Y") {
         selectIngredients(pizzaInput)
     } else {
-        checkoutMath(pizzaInput)
+        checkoutOrder(pizzaInput)
     }
 }
 
@@ -51,7 +58,7 @@ function pizzaName(pizzaInput) {
         pizzaInput.toUpperCase() === types_of_pizza.mexican ||
         pizzaInput.toUpperCase() === types_of_pizza.traditional
     ) {
-        checkoutOrder(pizzaInput)
+        checkoutReview(pizzaInput)
     }
 }
 
