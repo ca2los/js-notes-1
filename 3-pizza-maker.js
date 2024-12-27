@@ -18,7 +18,7 @@ function selectIngredients(pizzaInput) {
         olives: 3
     }
     while (true) {
-        let toppings = prompt("only Mozzarella, Mushrooms, Olives, or enter DONE to checkout.").toLowerCase();
+        let toppings = prompt("Enter Mozzarella, Mushrooms, Olives, or DONE to checkout.").toLowerCase();
         if (toppings === "done") {
             console.log("No more extra ingredients")
             checkoutOrder(pizzaInput)
