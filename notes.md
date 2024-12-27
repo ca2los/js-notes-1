@@ -507,7 +507,7 @@ It's a way of remembering and access a function's scope even after the execution
 ````
 
 ### This
-When a function includes the identifier is usually aa a reference that points to an object.
+When a function includes the identifier is usually as a reference that points to an object.
 ````javascript
     function foo() {
         console.log(this.bar)
@@ -515,3 +515,19 @@ When a function includes the identifier is usually aa a reference that points to
     var bar = "Retrieved by 'this' identifier."
     foo()
 ````
+
+### Prototypes
+It's way to add more properties with their values inside an object. For example:
+````javascript
+    var starcraft = {
+        race_1: "Terran",
+        race_2: "Zerg"
+    }
+    var add_more = Object.create(starcraft)
+    add_more.race_3 = "Protoss"
+    
+    starcraft.race_1    //  Terran
+    starcraft.race_2    //  Zerg
+    starcraft.race_3    //  Protoss
+````
+Let's try to think on video games to find friendly appliances in real life scenarios.
