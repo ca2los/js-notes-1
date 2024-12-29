@@ -1,3 +1,5 @@
+# UP & GOING
+
 ## Chapter 1
 Into programming is a quick overview of a programing introduction to JavaScript based on the famous "You don't know JS" book series. I don't 
 intend to commit plagiarism, and the purpose is the share my learning process from previous years for people interested in the language.
