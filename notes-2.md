@@ -1,7 +1,7 @@
 # SCOPES & CLOSURES
 
 ## Scope
-The scope is the rules for storing variables and for find them at a later time.
+The scope is the rules for storing variables and find them at a later time.
 
 ### Compiler Theory
 Compilation is when the program undergoes before it's even executed. The concepts are:
