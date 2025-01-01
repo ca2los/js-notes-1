@@ -14,3 +14,4 @@ JavaScript takes the code and process it milliseconds before it's executed.
 ### Understanding Code
 
 The conversation about the process is between the *Engine*, *Compiler*, and *Scope*.
+
