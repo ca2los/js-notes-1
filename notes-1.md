@@ -519,7 +519,7 @@ When a function includes the identifier is usually as a reference that points to
 ````
 
 ### Prototypes
-It's way to add more properties with their values inside an object. For example:
+It's an alternative for adding more properties and values inside an object. For example:
 ````javascript
     var starcraft = {
         race_1: "Terran",
