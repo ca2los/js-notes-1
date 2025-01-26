@@ -13,6 +13,7 @@ const terran = [
             ground: 8,
         },
         attack_range: 2,
+        sight: 7,
         unit_type: 'ground'
     },
     {
@@ -24,6 +25,7 @@ const terran = [
             ground: 6,
         },
         attack_range: 4,
+        sight: 6,
         unit_type: 'ground'
     }
 ]
@@ -36,15 +38,13 @@ let start_battle = true
 function groundBattle(groundUnitA, groundUnitB) {
     if (groundUnitA.attack.ground > groundUnitB.attack.ground) {
         while (true) {
-            if (groundUnitA.health || groundUnitB.health <= 0) {
-                console.log()
+            if (groundUnitA.health <= 0 || groundUnitB.health <= 0) {
+                console.log(`The battle has ended. ${groundUnitA.name.toUpperCase()} health is ${groundUnitA.health}, and ${groundUnitB.name.toUpperCase()} health is ${groundUnitB.health}`)
                 break
             }
 
-            let damage_a = groundUnitA.health =- groundUnitB.attack.ground
-            let damage_b = groundUnitB.health =- groundUnitA.attack.ground
-            damage_a++
-            damage_b++
+            groundUnitA.health =- groundUnitB.attack.ground
+            groundUnitB.health =- groundUnitA.attack.ground
         }
     } else {
         console.log('Not a ground vs ground battle.')
@@ -53,7 +53,7 @@ function groundBattle(groundUnitA, groundUnitB) {
 
 function battleType() {
     if (soldier_a.unit_type && soldier_b.unit_type === 'ground') {
-        groundBattle(soldier_a, soldier_a)
+        groundBattle(soldier_a, soldier_b)
     } else {
         console.log('No soldiers available.')
     }
