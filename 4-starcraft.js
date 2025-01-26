@@ -40,12 +40,12 @@ function groundBattle(groundUnitA, groundUnitB) {
         console.log('Ground VS Ground battle.')
         while (true) {
             if (groundUnitA.health <= 0) {
-                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points is the winner.`)
+                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} health points is the winner.`)
                 console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the loser.`)
                 break
             } else if (groundUnitB.health <= 0) {
-                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the winner.`)
-                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points is the loser.`)
+                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} health points is the winner.`)
+                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} health points is the loser.`)
                 break
             } else {
                 console.log('Fighting')
