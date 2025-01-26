@@ -36,19 +36,26 @@ let soldier_b = terran[1]
 let start_battle = true
 
 function groundBattle(groundUnitA, groundUnitB) {
-    if (groundUnitA.attack.ground > groundUnitB.attack.ground) {
+    if (groundUnitA.sight > groundUnitB.sight) {
+        console.log('Ground VS Ground battle.')
         while (true) {
-            if (groundUnitA.health <= 0 || groundUnitB.health <= 0) {
-                console.log(`The battle has ended. ${groundUnitA.name.toUpperCase()} health is ${groundUnitA.health}, and ${groundUnitB.name.toUpperCase()} health is ${groundUnitB.health}`)
+            if (groundUnitA.health <= 0) {
+                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points is the winner.`)
+                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the loser.`)
                 break
+            } else if (groundUnitB.health <= 0) {
+                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the winner.`)
+                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points is the loser.`)
+                break
+            } else {
+                console.log('Fighting')
             }
-
-            groundUnitA.health =- groundUnitB.attack.ground
-            groundUnitB.health =- groundUnitA.attack.ground
+            groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
+            groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
         }
-    } else {
-        console.log('Not a ground vs ground battle.')
     }
+    if (groundUnitB.sight > groundUnitA.sight) {}
+    if (groundUnitA.sight === groundUnitB.sight) {}
 }
 
 function battleType() {
