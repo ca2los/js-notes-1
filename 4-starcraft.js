@@ -1,11 +1,11 @@
-"use strict"
+'use strict'
 // StarCraft
 // Retrieve units statistics
 // Confront units and retrieve updated statistics
 
 const terran = [
     {
-        name: "firebat",
+        name: 'firebat',
         health: 50,
         armor: 1,
         attack: {
@@ -13,10 +13,10 @@ const terran = [
             ground: 8,
         },
         attack_range: 2,
-        unit_type: "ground"
+        unit_type: 'ground'
     },
     {
-        name: "marine",
+        name: 'marine',
         health: 40,
         armor: 0,
         attack: {
@@ -24,31 +24,43 @@ const terran = [
             ground: 6,
         },
         attack_range: 4,
-        unit_type: "ground"
+        unit_type: 'ground'
     }
 ]
 
 // Confronting Units
-let player_a = terran[0]
-let player_b = terran[1]
+let soldier_a = terran[0]
+let soldier_b = terran[1]
 let start_battle = true
 
-function groundBattle() {
-    if (player_a.health > player_b.health) {
-        player_b.health -= player_a.attack
+function groundBattle(groundUnitA, groundUnitB) {
+    if (groundUnitA.attack.ground > groundUnitB.attack.ground) {
+        while (true) {
+            if (groundUnitA.health || groundUnitB.health <= 0) {
+                console.log()
+                break
+            }
+
+            let damage_a = groundUnitA.health =- groundUnitB.attack.ground
+            let damage_b = groundUnitB.health =- groundUnitA.attack.ground
+            damage_a++
+            damage_b++
+        }
+    } else {
+        console.log('Not a ground vs ground battle.')
     }
 }
 
 function battleType() {
-    if (player_a.unit_type === "ground" && player_b.unit_type === "ground") {
-        groundBattle()
+    if (soldier_a.unit_type && soldier_b.unit_type === 'ground') {
+        groundBattle(soldier_a, soldier_a)
+    } else {
+        console.log('No soldiers available.')
     }
 }
 
-while (start_battle) {
-    if (player_a.health <= 0 || player_b.health <= 0) {
-        console.log(`Player A: The winner! | Health is ${player_a.health} pts.`)
-        break
-    }
+if (start_battle) {
     battleType()
+} else {
+    console.log('No battle.')
 }
