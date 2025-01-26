@@ -532,4 +532,8 @@ It's an alternative for adding more properties and values inside an object. For 
     starcraft.race_2    //  Zerg
     starcraft.race_3    //  Protoss
 ````
-Let's try to think on video games to find friendly appliances in real life scenarios.
+
+
+### Map Arrays
+The `map()` method is an ES5 feature that allows to update an array without modifying the original array. The syntax is attached to arrow 
+functions as callback functions.
