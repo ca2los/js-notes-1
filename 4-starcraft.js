@@ -3,7 +3,7 @@
 // Retrieve units statistics
 // Confront units and retrieve updated statistics
 
-const terran = [
+const starCraft = [
     {
         name: 'firebat',
         health: 50,
@@ -31,8 +31,8 @@ const terran = [
 ]
 
 // Confronting Units
-let soldier_a = terran[0]
-let soldier_b = terran[1]
+let soldier_a = starCraft[0]
+let soldier_b = starCraft[1]
 let start_battle = true
 
 function groundBattle(groundUnitA, groundUnitB) {
@@ -52,6 +52,22 @@ function groundBattle(groundUnitA, groundUnitB) {
             }
             groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
             groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
+            /*
+            const player_a = groundUnitA.map(item => {
+                const container = {}
+                container.item.name = item.name
+                container.item.health = item.health
+                return container
+            })
+            const player_b = groundUnitB.map(item => {
+                const container = {}
+                container.item.name = item.name
+                container.item.health = item.health
+                return container
+            })
+            console.log(player_a, player_b)
+
+             */
         }
     }
     if (groundUnitB.sight > groundUnitA.sight) {}
