@@ -53,20 +53,19 @@ function groundBattle(groundUnitA, groundUnitB) {
             groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
             groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
             /*
-            const player_a = groundUnitA.map(item => {
+            const stats_a = groundUnitA.map(item => {
                 const container = {}
                 container.item.name = item.name
                 container.item.health = item.health
                 return container
             })
-            const player_b = groundUnitB.map(item => {
+            const stats_b = groundUnitB.map(item => {
                 const container = {}
                 container.item.name = item.name
                 container.item.health = item.health
                 return container
             })
-            console.log(player_a, player_b)
-
+            console.log(stats_a)
              */
         }
     }
