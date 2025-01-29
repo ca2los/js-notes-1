@@ -57,16 +57,19 @@ function groundBattle(groundUnitA, groundUnitB) {
                 const container = {}
                 container.item.name = item.name
                 container.item.health = item.health
+                console.log(container)
                 return container
             })
             const stats_b = groundUnitB.map(item => {
                 const container = {}
                 container.item.name = item.name
                 container.item.health = item.health
+                console.log(container)
                 return container
             })
             console.log(stats_a)
-             */
+            // Try with an independent map() instruction
+            */
         }
     }
     if (groundUnitB.sight > groundUnitA.sight) {}
