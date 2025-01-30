@@ -58,7 +58,6 @@ const starCraft = [
             }
         ]
     }
-    // Create a new array inside to enable mapping inside groundBattle()
 ]
 
 const stats_a = starCraft.map(item => {
@@ -82,6 +81,7 @@ let soldier_b = starCraft[1]
 let start_battle = true
 
 function groundBattle(groundUnitA, groundUnitB) {
+    // Try to map() with the new array values in the object.
     if (groundUnitA.sight > groundUnitB.sight) {
         console.log(`Stage #2: ${soldier_a.unit_type.toUpperCase()} and ${soldier_b.unit_type.toUpperCase()} battle type.`)
         while (true) {
