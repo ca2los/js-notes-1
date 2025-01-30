@@ -30,12 +30,28 @@ const starCraft = [
     }
 ]
 
+const stats_a = starCraft.map(item => {
+    const container = {}
+    container.name = item.name
+    container.health = item.health
+    return container
+})
+const stats_b = starCraft.map(item => {
+    const container = {}
+    container[item] = item.name
+    container[item] = item.health
+    return container
+})
+
+console.log(stats_a, stats_b)
+
 // Confronting Units
 let soldier_a = starCraft[0]
 let soldier_b = starCraft[1]
 let start_battle = true
 
 function groundBattle(groundUnitA, groundUnitB) {
+
     if (groundUnitA.sight > groundUnitB.sight) {
         console.log(`Stage #2: ${soldier_a.unit_type.toUpperCase()} and ${soldier_b.unit_type.toUpperCase()} battle type.`)
         while (true) {
@@ -53,24 +69,7 @@ function groundBattle(groundUnitA, groundUnitB) {
             }
             groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
             groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
-            /*
-            const stats_a = groundUnitA.map(item => {
-                const container = {}
-                container.item.name = item.name
-                container.item.health = item.health
-                console.log(container)
-                return container
-            })
-            const stats_b = groundUnitB.map(item => {
-                const container = {}
-                container.item.name = item.name
-                container.item.health = item.health
-                console.log(container)
-                return container
-            })
-            console.log(stats_a)
             // Try with an independent map() instruction
-            */
         }
     }
     if (groundUnitB.sight > groundUnitA.sight) {}
