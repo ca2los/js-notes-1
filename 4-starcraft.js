@@ -48,6 +48,7 @@ function groundBattle(groundUnitA, groundUnitB) {
                 console.log(`Stage #3: Loser is ${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points.`)
                 break
             } else {
+                console.log(groundUnitA)
                 console.log(`Fighting! ${groundUnitA.name.toUpperCase()} health is ${groundUnitA.health} and ${groundUnitB.name.toUpperCase()} health is ${groundUnitB.health} points.`)
             }
             groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
