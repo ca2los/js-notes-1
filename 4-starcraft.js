@@ -37,18 +37,18 @@ let start_battle = true
 
 function groundBattle(groundUnitA, groundUnitB) {
     if (groundUnitA.sight > groundUnitB.sight) {
-        console.log('Ground VS Ground battle.')
+        console.log(`Stage #2: ${soldier_a.unit_type.toUpperCase()} and ${soldier_b.unit_type.toUpperCase()} battle type.`)
         while (true) {
             if (groundUnitA.health <= 0) {
                 console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} health points is the winner.`)
                 console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the loser.`)
                 break
             } else if (groundUnitB.health <= 0) {
-                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} health points is the winner.`)
-                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} health points is the loser.`)
+                console.log(`Stage #3: Winner is ${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points.`)
+                console.log(`Stage #3: Loser is ${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points.`)
                 break
             } else {
-                console.log('Fighting')
+                console.log(`Fighting! ${groundUnitA.name.toUpperCase()} health is ${groundUnitA.health} and ${groundUnitB.name.toUpperCase()} health is ${groundUnitB.health} points.`)
             }
             groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
             groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
@@ -78,6 +78,7 @@ function groundBattle(groundUnitA, groundUnitB) {
 
 function battleType() {
     if (soldier_a.unit_type && soldier_b.unit_type === 'ground') {
+        console.log(`Stage #1: ${soldier_a.name.toUpperCase()} and ${soldier_b.name.toUpperCase()} units selected.`)
         groundBattle(soldier_a, soldier_b)
     } else {
         console.log('No soldiers available.')
