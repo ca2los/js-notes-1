@@ -71,6 +71,7 @@ const stats_b = starCraft.map(item => {
     container[item] = item.name
     container[item] = item.health
     return container
+    // Try to map() this function with the new array
 })
 
 console.log(stats_a, stats_b)
