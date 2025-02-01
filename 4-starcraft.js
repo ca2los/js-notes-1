@@ -52,10 +52,11 @@ const player_b = soldier_b.map(item => {
     container.health = item.health
     return container
 })
+// Pass more values to player_a and player_b to interact with groundBattle()
 console.log(player_a, player_b)
 
 function groundBattle(groundUnitA, groundUnitB) {
-    // Try to map() with the new array values in the object.
+    // Try to map() with player_a and player_b new arrays.
     if (groundUnitA[0].sight > groundUnitB[0].sight) {
         console.log(`Stage #2: ${soldier_a[0].unit_type.toUpperCase()} and ${soldier_b[0].unit_type.toUpperCase()} battle type.`)
         while (true) {
@@ -73,7 +74,6 @@ function groundBattle(groundUnitA, groundUnitB) {
             }
             groundUnitA[0].health = groundUnitA[0].health - groundUnitB[0].attack.ground
             groundUnitB[0].health = groundUnitB[0].health - groundUnitA[0].attack.ground
-            // Try with an independent map() instruction
         }
     }
     if (groundUnitB[0].sight > groundUnitA[0].sight) {}
