@@ -27,7 +27,7 @@ const starCraft = [
         attack_range: 4,
         sight: 6,
         unit_type: 'ground'
-    },
+    }/*,
     {
         firebat: [
             {
@@ -57,7 +57,7 @@ const starCraft = [
                 unit_type: 'ground'
             }
         ]
-    }
+    }*/
 ]
 
 const stats_a = starCraft.map(item => {
@@ -66,15 +66,8 @@ const stats_a = starCraft.map(item => {
     container.health = item.health
     return container
 })
-const stats_b = starCraft.map(item => {
-    const container = {}
-    container[2] = item.name
-    container[2] = item.health
-    return container
-    // Try to map() this function with the new array
-})
 
-console.log(stats_a, stats_b)
+console.log(stats_a)
 
 // Confronting Units
 let soldier_a = starCraft[0]
