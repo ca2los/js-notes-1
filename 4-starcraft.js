@@ -81,8 +81,8 @@ function groundBattle(groundUnitA, groundUnitB) {
 }
 
 function battleType() {
-    if (soldier_a.unit_type && soldier_b.unit_type === 'ground') {
-        console.log(`Stage #1: ${soldier_a.name.toUpperCase()} and ${soldier_b.name.toUpperCase()} units selected.`)
+    if (soldier_a[0].unit_type && soldier_b[0].unit_type === 'ground') {
+        console.log(`Stage #1: ${soldier_a[0].name.toUpperCase()} and ${soldier_b[0].name.toUpperCase()} units selected.`)
         groundBattle(soldier_a, soldier_b)
     } else {
         console.log('No soldiers available.')
