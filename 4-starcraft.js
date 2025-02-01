@@ -56,28 +56,28 @@ console.log(player_a, player_b)
 
 function groundBattle(groundUnitA, groundUnitB) {
     // Try to map() with the new array values in the object.
-    if (groundUnitA.sight > groundUnitB.sight) {
-        console.log(`Stage #2: ${soldier_a.unit_type.toUpperCase()} and ${soldier_b.unit_type.toUpperCase()} battle type.`)
+    if (groundUnitA[0].sight > groundUnitB[0].sight) {
+        console.log(`Stage #2: ${soldier_a[0].unit_type.toUpperCase()} and ${soldier_b[0].unit_type.toUpperCase()} battle type.`)
         while (true) {
-            if (groundUnitA.health <= 0) {
-                console.log(`${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} health points is the winner.`)
-                console.log(`${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points is the loser.`)
+            if (groundUnitA[0].health <= 0) {
+                console.log(`${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} health points is the winner.`)
+                console.log(`${groundUnitA[0].name.toUpperCase()} with ${groundUnitA[0].health} remaining health points is the loser.`)
                 break
-            } else if (groundUnitB.health <= 0) {
-                console.log(`Stage #3: Winner is ${groundUnitA.name.toUpperCase()} with ${groundUnitA.health} remaining health points.`)
-                console.log(`Stage #3: Loser is ${groundUnitB.name.toUpperCase()} with ${groundUnitB.health} remaining health points.`)
+            } else if (groundUnitB[0].health <= 0) {
+                console.log(`Stage #3: Winner is ${groundUnitA[0].name.toUpperCase()} with ${groundUnitA[0].health} remaining health points.`)
+                console.log(`Stage #3: Loser is ${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} remaining health points.`)
                 break
             } else {
                 console.log(groundUnitA)
-                console.log(`Fighting! ${groundUnitA.name.toUpperCase()} health is ${groundUnitA.health} and ${groundUnitB.name.toUpperCase()} health is ${groundUnitB.health} points.`)
+                console.log(`Fighting! ${groundUnitA[0].name.toUpperCase()} health is ${groundUnitA[0].health} and ${groundUnitB[0].name.toUpperCase()} health is ${groundUnitB[0].health} points.`)
             }
-            groundUnitA.health = groundUnitA.health - groundUnitB.attack.ground
-            groundUnitB.health = groundUnitB.health - groundUnitA.attack.ground
+            groundUnitA[0].health = groundUnitA[0].health - groundUnitB[0].attack.ground
+            groundUnitB[0].health = groundUnitB[0].health - groundUnitA[0].attack.ground
             // Try with an independent map() instruction
         }
     }
-    if (groundUnitB.sight > groundUnitA.sight) {}
-    if (groundUnitA.sight === groundUnitB.sight) {}
+    if (groundUnitB[0].sight > groundUnitA[0].sight) {}
+    if (groundUnitA[0].sight === groundUnitB[0].sight) {}
 }
 
 function battleType() {
