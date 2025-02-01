@@ -3,76 +3,56 @@
 // Retrieve units statistics
 // Confront units and retrieve updated statistics
 
-const starCraft = [
-    {
-        name: 'firebat',
-        health: 50,
-        armor: 1,
-        attack: {
-            air: 0,
-            ground: 8,
-        },
-        attack_range: 2,
-        sight: 7,
-        unit_type: 'ground'
-    },
-    {
-        name: 'marine',
-        health: 40,
-        armor: 0,
-        attack: {
-            air: 6,
-            ground: 6,
-        },
-        attack_range: 4,
-        sight: 6,
-        unit_type: 'ground'
-    }/*,
-    {
-        firebat: [
-            {
-                name: 'firebat',
-                health: 50,
-                armor: 1,
-                attack: {
-                    air: 0,
-                    ground: 8,
-                },
-                attack_range: 2,
-                sight: 7,
-                unit_type: 'ground'
-            }
-        ],
-        marine: [
-            {
-                name: 'marine',
-                health: 40,
-                armor: 0,
-                attack: {
-                    air: 6,
-                    ground: 6,
-                },
-                attack_range: 4,
-                sight: 6,
-                unit_type: 'ground'
-            }
-        ]
-    }*/
-]
+const starCraft = {
+    firebat: [
+        {
+            name: 'firebat',
+            health: 50,
+            armor: 1,
+            attack: {
+                air: 0,
+                ground: 8,
+            },
+            attack_range: 2,
+            sight: 7,
+            unit_type: 'ground'
+        }
+    ],
+    marine: [
+        {
+            name: 'marine',
+            health: 40,
+            armor: 0,
+            attack: {
+                air: 6,
+                ground: 6,
+            },
+            attack_range: 4,
+            sight: 6,
+            unit_type: 'ground'
+        }
+    ]
+}
 
-const stats_a = starCraft.map(item => {
+// Confronting Units
+let soldier_a = starCraft.firebat
+let soldier_b = starCraft.marine
+let start_battle = true
+
+// Defining New Array
+const player_a = soldier_a.map(item => {
     const container = {}
     container.name = item.name
     container.health = item.health
     return container
 })
-
-console.log(stats_a)
-
-// Confronting Units
-let soldier_a = starCraft[0]
-let soldier_b = starCraft[1]
-let start_battle = true
+const player_b = soldier_b.map(item => {
+    const container = {}
+    container.name = item.name
+    container.health = item.health
+    return container
+})
+console.log(player_a, player_b)
 
 function groundBattle(groundUnitA, groundUnitB) {
     // Try to map() with the new array values in the object.
