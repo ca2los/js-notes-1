@@ -94,6 +94,4 @@ if (start_battle) {
 } else {
     console.log('No battle.')
 }
-// Simulate the units selected by the user
-// Create a battle array to map the battle values
 // Arrow functions to execute battle actions
