@@ -78,6 +78,7 @@ function groundBattle(groundUnitA, groundUnitB) {
     }
     if (groundUnitB[0].sight > groundUnitA[0].sight) {}
     if (groundUnitA[0].sight === groundUnitB[0].sight) {}
+    // Try air units
 }
 
 function battleType() {
