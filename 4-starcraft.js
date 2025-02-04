@@ -52,7 +52,7 @@ const player_b = soldier_b.map(item => {
     container.health = item.health
     return container
 })
-// Pass more values to player_a and player_b to interact with groundBattle()
+// ToDo: Tomorrow pass more values to player_a and player_b to interact with groundBattle()
 console.log(player_a, player_b)
 
 function groundBattle(groundUnitA, groundUnitB) {
