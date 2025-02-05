@@ -32,6 +32,8 @@ const starCraft = {
             unit_type: 'ground'
         }
     ]
+    // Air Unit
+    // Motorized Unit
 }
 
 // Confronting Units
@@ -40,6 +42,7 @@ let soldier_b = starCraft.marine
 let start_battle = true
 
 // Defining New Array
+// Pass the arrays inside the function
 const player_a = soldier_a.map(item => {
     const container = {}
     container.name = item.name
@@ -76,8 +79,8 @@ function groundBattle(groundUnitA, groundUnitB) {
             groundUnitB[0].health = groundUnitB[0].health - groundUnitA[0].attack.ground
         }
     }
-    if (groundUnitB[0].sight > groundUnitA[0].sight) {}
-    if (groundUnitA[0].sight === groundUnitB[0].sight) {}
+    if (groundUnitB[0].sight > groundUnitA[0].sight) {} // Inverse
+    if (groundUnitA[0].sight === groundUnitB[0].sight) {} // Even
     // Try air units
 }
 
