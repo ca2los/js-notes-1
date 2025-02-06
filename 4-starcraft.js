@@ -32,17 +32,13 @@ const starCraft = {
             unit_type: 'ground'
         }
     ]
-    // Air Unit
-    // Motorized Unit
 }
 
-// Confronting Units
-let soldier_a = starCraft.firebat
-let soldier_b = starCraft.marine
+// Start Battle
 let start_battle = true
 
-// Defining New Array
-const player_a = soldier_a.map(item => {
+// Defining players
+const player_a = starCraft.firebat.map(item => {
     const container = {}
     container.name = item.name
     container.unit_type = item.unit_type
@@ -52,7 +48,7 @@ const player_a = soldier_a.map(item => {
     // Try passing attack.air
     return container
 })
-const player_b = soldier_b.map(item => {
+const player_b = starCraft.marine.map(item => {
     const container = {}
     container.name = item.name
     container.unit_type = item.unit_type
@@ -68,15 +64,15 @@ console.log(player_a[0].unit_type, player_b[0].unit_type)
 function groundBattle(groundUnitA, groundUnitB) {
     // Try to map() with player_a and player_b new arrays.
     if (groundUnitA[0].sight > groundUnitB[0].sight) {
-        console.log(`Stage #2: ${soldier_a[0].unit_type.toUpperCase()} and ${soldier_b[0].unit_type.toUpperCase()} battle type.`)
+        console.log(`Stage #2: ${groundUnitA[0].unit_type.toUpperCase()} and ${groundUnitB[0].unit_type.toUpperCase()} battle type.`)
         while (true) {
             if (groundUnitA[0].health <= 0) {
-                console.log(`${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} health points is the winner.`)
-                console.log(`${groundUnitA[0].name.toUpperCase()} with ${groundUnitA[0].health} remaining health points is the loser.`)
+                console.log(`Stage #3: Loser is ${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} health points is the winner.`)
+                console.log(`Stage #3: Winner is ${groundUnitA[0].name.toUpperCase()} ${groundUnitA[0].health} remaining health points is the loser.`)
                 break
             } else if (groundUnitB[0].health <= 0) {
-                console.log(`Stage #3: Winner is ${groundUnitA[0].name.toUpperCase()} with ${groundUnitA[0].health} remaining health points.`)
-                console.log(`Stage #3: Loser is ${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} remaining health points.`)
+                console.log(`Stage #3: Winner is ${groundUnitA[0].name.toUpperCase()} with ${groundUnitA[0].health} health points is the winner`)
+                console.log(`Stage #3: Loser is ${groundUnitB[0].name.toUpperCase()} with ${groundUnitB[0].health} remaining health points is the loser.`)
                 break
             } else {
                 console.log(groundUnitA)
@@ -88,7 +84,6 @@ function groundBattle(groundUnitA, groundUnitB) {
     }
     if (groundUnitB[0].sight > groundUnitA[0].sight) {} // Inverse
     if (groundUnitA[0].sight === groundUnitB[0].sight) {} // Even
-    // Try air units
 }
 
 function battleType() {
