@@ -47,15 +47,16 @@ const player_a = soldier_a.map(item => {
     const container = {}
     container.name = item.name
     container.health = item.health
+    container.attack = item.attack.ground
     return container
 })
 const player_b = soldier_b.map(item => {
     const container = {}
     container.name = item.name
     container.health = item.health
+    container.attack = item.attack.ground
     return container
 })
-// ToDo: Tomorrow pass more values to player_a and player_b to interact with groundBattle()
 console.log(player_a, player_b)
 
 function groundBattle(groundUnitA, groundUnitB) {
