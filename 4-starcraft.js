@@ -42,22 +42,28 @@ let soldier_b = starCraft.marine
 let start_battle = true
 
 // Defining New Array
-// Pass the arrays inside the function
 const player_a = soldier_a.map(item => {
     const container = {}
     container.name = item.name
+    container.unit_type = item.unit_type
     container.health = item.health
     container.attack = item.attack.ground
+    container.sight = item.sight
+    // Try passing attack.air
     return container
 })
 const player_b = soldier_b.map(item => {
     const container = {}
     container.name = item.name
+    container.unit_type = item.unit_type
     container.health = item.health
     container.attack = item.attack.ground
+    container.sight = item.sight
+    // Try passing attack.air
     return container
 })
 console.log(player_a, player_b)
+console.log(player_a[0].unit_type, player_b[0].unit_type)
 
 function groundBattle(groundUnitA, groundUnitB) {
     // Try to map() with player_a and player_b new arrays.
@@ -86,9 +92,9 @@ function groundBattle(groundUnitA, groundUnitB) {
 }
 
 function battleType() {
-    if (soldier_a[0].unit_type && soldier_b[0].unit_type === 'ground') {
-        console.log(`Stage #1: ${soldier_a[0].name.toUpperCase()} and ${soldier_b[0].name.toUpperCase()} units selected.`)
-        groundBattle(soldier_a, soldier_b)
+    if (player_a[0].unit_type && player_b[0].unit_type === 'ground') {
+        console.log(`Stage #1: ${player_a[0].name.toUpperCase()} and ${player_b[0].name.toUpperCase()} units selected.`)
+        groundBattle(player_a, player_b)
     } else {
         console.log('No soldiers available.')
     }
