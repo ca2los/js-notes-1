@@ -80,6 +80,7 @@ function groundBattle(groundUnitA, groundUnitB) {
             }
             groundUnitA[0].health = groundUnitA[0].health - groundUnitB[0].attack.ground
             groundUnitB[0].health = groundUnitB[0].health - groundUnitA[0].attack.ground
+            // The iteration is not under control
         }
     }
     if (groundUnitB[0].sight > groundUnitA[0].sight) {} // Inverse
