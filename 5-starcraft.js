@@ -35,25 +35,34 @@ const starCraft = {
     ]
 }
 
+// New array
+function newArray(unit) {
+    unit = starCraft.unit["valueOf"].map(item => {
+        const container = {}
+        container.name = item.name
+        container.unit_type = item.unit_type
+        container.health = item.health
+        container.attack = item.attack.ground
+        container.sight = item.sight
+        return container
+    })
+    console.log(`New array: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
+    console.log(unit)
+}
+
 // Select Units
 function selectUnits() {
     let player_a = 'firebat'
-    console.log(`Player #1 typed: ${player_a.toUpperCase()}`)
+    //let player_b = 'marine'
 
     // Creating independent arrays
-    function selected(unit) {
-        if (player_a.toLowerCase() === starCraft.firebat[0].name) {
-            unit = starCraft.firebat.map(item => {
-                const container = {}
-                container.name = item.name
-                container.unit_type = item.unit_type
-                container.health = item.health
-                container.attack = item.attack.ground
-                container.sight = item.sight
-                return container
-            })
-            console.log(`New array: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
-            console.log(unit)
+    function selected(unit_a) {
+        console.log(`Player #1 typed: ${unit_a.toUpperCase()}`)
+
+        if (unit_a.toLowerCase()  === starCraft.firebat[0].name) {
+            newArray(unit_a)
+        } else if (unit_a.toLowerCase() === starCraft.marine[0].name) {
+            newArray(unit_a)
         }
     }
     selected(player_a)
