@@ -3,6 +3,7 @@
 // Retrieve units statistics
 // Confront units and retrieve updated statistics
 
+// Units
 const starCraft = {
     firebat: [
         {
@@ -32,8 +33,6 @@ const starCraft = {
             unit_type: 'ground'
         }
     ]
-    // Air Unit
-    // Motorized Unit
 }
 
 // Confronting Units

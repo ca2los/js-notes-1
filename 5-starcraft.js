@@ -35,6 +35,16 @@ const starCraft = {
     ]
 }
 
+// Define Battle
+function battleType(type_a, type_b) {
+    // Get unit type (if)
+    // Get unit sight (if)
+    // Battle type logic (while)
+    // Battle advantage by sight (comparison)
+    // Battle iteration (loop)
+    // Battle result (break)
+}
+
 // New array
 function newArray(array_a, array_b) {
     let unitBlock = item => {
@@ -49,10 +59,12 @@ function newArray(array_a, array_b) {
         return container
     }
 
+    // Create Arrays For Battle
     array_a = array_a.map(unitBlock)
     array_b = array_b.map(unitBlock)
     console.log(`Stage #2: Player A|B new arrays for -> ${array_a[0].name.toUpperCase()} & ${array_b[0].name.toUpperCase()}`)
     console.log(array_a, array_b)
+    battleType(array_a, array_b)
 }
 
 // Select Units
@@ -60,7 +72,7 @@ function selectUnits() {
     let player_a = starCraft.firebat
     let player_b = starCraft.marine
 
-    // Creating independent arrays
+    // Confirm Units
     if (player_a && player_b) {
         function selected(unit_a, unit_b) {
             console.log(`Stage #1: Player A selected unit is -> ${(unit_a[0].name).toUpperCase()}`)
