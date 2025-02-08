@@ -37,14 +37,14 @@ const starCraft = {
 
 // Select Units
 function selectUnits() {
-    let player_a = starCraft.firebat
-    console.log(`Player #1 selected: ${player_a[0].name.toUpperCase()}`)
+    let player_a = 'firebat'
+    console.log(`Player #1 typed: ${player_a.toUpperCase()}`)
 
+    // Creating independent arrays
     function selected(unit) {
-        if (unit[0].name === 'firebat') {
+        if (player_a.toLowerCase() === starCraft.firebat[0].name) {
             unit = starCraft.firebat.map(item => {
                 const container = {}
-                container.name = item.name
                 container.name = item.name
                 container.unit_type = item.unit_type
                 container.health = item.health
@@ -52,7 +52,7 @@ function selectUnits() {
                 container.sight = item.sight
                 return container
             })
-            console.log(`New array for: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
+            console.log(`New array: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
             console.log(unit)
         }
     }
