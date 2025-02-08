@@ -35,35 +35,28 @@ const starCraft = {
     ]
 }
 
-// Defining Players (new array)
-function selected(player) {
-    player = starCraft.player.map(item => {
-        const container = {}
-        container.name = item.name
-        container.unit_type = item.unit_type
-        container.health = item.health
-        container.attack = item.attack.ground
-        container.sight = item.sight
-        // Try passing attack.air
-        return container
-    })
-}
-
-// Battle Type
-function battleType() {
-    if (player_a[0].unit_type && player_b[0].unit_type === 'ground') {
-        console.log(`Stage #1: Selected units -> ${player_a[0].name.toUpperCase()} and ${player_b[0].name.toUpperCase()}`)
-        //groundBattle(player_a, player_b)
-    } else {
-        console.log('No soldiers available.')
-    }
-}
-
 // Select Units
 function selectUnits() {
     let player_a = starCraft.firebat
-    let player_b = starCraft.marine
-    battleType(player_a, player_b)
+    console.log(`Player #1 selected: ${player_a[0].name.toUpperCase()}`)
+
+    function selected(unit) {
+        if (unit[0].name === 'firebat') {
+            unit = starCraft.firebat.map(item => {
+                const container = {}
+                container.name = item.name
+                container.name = item.name
+                container.unit_type = item.unit_type
+                container.health = item.health
+                container.attack = item.attack.ground
+                container.sight = item.sight
+                return container
+            })
+            console.log(`New array for: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
+            console.log(unit)
+        }
+    }
+    selected(player_a)
 }
 
 // Start Battle
@@ -71,8 +64,9 @@ function startBattle(initialize) {
     if (initialize === true) {
         console.log('Starting battle...')
         selectUnits()
+    } else {
+        console.log('No battle.')
     }
-    console.log('No battle...')
 }
 
 // Initialize Battle
