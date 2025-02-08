@@ -37,7 +37,7 @@ const starCraft = {
 
 // New array
 function newArray(unit) {
-    unit = starCraft.unit["valueOf"].map(item => {
+    unit = starCraft.unit.map(item => {
         const container = {}
         container.name = item.name
         container.unit_type = item.unit_type
@@ -52,20 +52,13 @@ function newArray(unit) {
 
 // Select Units
 function selectUnits() {
-    let player_a = 'firebat'
+    let player_a = starCraft.firebat
+    console.log(player_a)
 
     // Creating independent arrays
     function selected(unit_a) {
-        console.log(`Player #1 entered: ${unit_a.toUpperCase()} which is a ${(typeof unit_a).toUpperCase()}`)
-
-        let playerParsed = JSON.parse(unit_a)
-
-        console.log(playerParsed)
-
-        if (unit_a.toLowerCase() === starCraft.hasOwnProperty(playerParsed[0].name)) {
-            console.log(`Success ${starCraft.hasOwnProperty(playerParsed[0].name)}`)
-            //newArray(starCraft.hasOwnProperty(unit_a))
-        }
+        console.log(`Player #1 selected: ${(unit_a[0].name).toUpperCase()} which is an ${(typeof unit_a).toUpperCase()}.`)
+        newArray(unit_a)
     }
     selected(player_a)
 }
