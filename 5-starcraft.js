@@ -36,8 +36,8 @@ const starCraft = {
 }
 
 // New array
-function newArray(unit) {
-    unit = unit.map(item => {
+function newArray(array_a, array_b) {
+    let unitBlock = item => {
         const container = {}
         container.name = item.name
         container.health = item.health
@@ -47,21 +47,28 @@ function newArray(unit) {
         container.sight = item.sight
         container.unit_type = item.unit_type
         return container
-    })
-    console.log(`Stage #2: Player A new array for ${unit[0].name.toUpperCase()} unit ->`)
-    console.log(unit)
+    }
+
+    array_a = array_a.map(unitBlock)
+    array_b = array_b.map(unitBlock)
+    console.log(`Stage #2: Player A|B new arrays for -> ${array_a[0].name.toUpperCase()} & ${array_b[0].name.toUpperCase()}`)
+    console.log(array_a, array_b)
 }
 
 // Select Units
 function selectUnits() {
     let player_a = starCraft.firebat
+    let player_b = starCraft.marine
 
     // Creating independent arrays
-    function selected(unit_a, unit_b) {
-        console.log(`Stage #1: Player A selected a ${(unit_a[0].name).toUpperCase()} unit`)
-        newArray(unit_a, unit_b)
+    if (player_a && player_b) {
+        function selected(unit_a, unit_b) {
+            console.log(`Stage #1: Player A selected unit is -> ${(unit_a[0].name).toUpperCase()}`)
+            console.log(`Stage #1: Player B selected unit is -> ${(unit_b[0].name).toUpperCase()}`)
+            newArray(unit_a, unit_b)
+        }
+        selected(player_a, player_b)
     }
-    selected(player_a)
 }
 
 // Start Battle
