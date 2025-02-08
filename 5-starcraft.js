@@ -53,16 +53,18 @@ function newArray(unit) {
 // Select Units
 function selectUnits() {
     let player_a = 'firebat'
-    //let player_b = 'marine'
 
     // Creating independent arrays
     function selected(unit_a) {
-        console.log(`Player #1 typed: ${unit_a.toUpperCase()}`)
+        console.log(`Player #1 entered: ${unit_a.toUpperCase()} which is a ${(typeof unit_a).toUpperCase()}`)
 
-        if (unit_a.toLowerCase()  === starCraft.firebat[0].name) {
-            newArray(unit_a)
-        } else if (unit_a.toLowerCase() === starCraft.marine[0].name) {
-            newArray(unit_a)
+        let playerParsed = JSON.parse(unit_a)
+
+        console.log(playerParsed)
+
+        if (unit_a.toLowerCase() === starCraft.hasOwnProperty(playerParsed[0].name)) {
+            console.log(`Success ${starCraft.hasOwnProperty(playerParsed[0].name)}`)
+            //newArray(starCraft.hasOwnProperty(unit_a))
         }
     }
     selected(player_a)
