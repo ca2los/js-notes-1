@@ -4,7 +4,7 @@
 // Confront units and retrieve updated statistics
 
 // Initialize Battle
-const start_battle = false
+const start_battle = true
 
 // Units
 const starCraft = {
@@ -53,7 +53,6 @@ function selected(player) {
 }
 const player_a = starCraft.firebat
 const player_b = starCraft.marine
-console.log(player_a, player_b)
 
 // Battle Type
 function battleType() {
@@ -67,6 +66,7 @@ function battleType() {
 
 // Start Battle
 if (start_battle) {
+    console.log(`Units available: ${starCraft.firebat[0].name.toUpperCase()} | ${starCraft.marine[0].name.toUpperCase()}`)
     battleType()
 } else {
     console.log('No battle.')
