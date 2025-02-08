@@ -37,28 +37,29 @@ const starCraft = {
 
 // New array
 function newArray(unit) {
-    unit = starCraft.unit.map(item => {
+    unit = unit.map(item => {
         const container = {}
         container.name = item.name
-        container.unit_type = item.unit_type
         container.health = item.health
+        container.armor = item.armor
         container.attack = item.attack.ground
+        container.attack_range = item.attack_range
         container.sight = item.sight
+        container.unit_type = item.unit_type
         return container
     })
-    console.log(`New array: ${unit[0].name.toUpperCase()} -> Ready for combat!`)
+    console.log(`Stage #2: Player A new array for ${unit[0].name.toUpperCase()} unit ->`)
     console.log(unit)
 }
 
 // Select Units
 function selectUnits() {
     let player_a = starCraft.firebat
-    console.log(player_a)
 
     // Creating independent arrays
-    function selected(unit_a) {
-        console.log(`Player #1 selected: ${(unit_a[0].name).toUpperCase()} which is an ${(typeof unit_a).toUpperCase()}.`)
-        newArray(unit_a)
+    function selected(unit_a, unit_b) {
+        console.log(`Stage #1: Player A selected a ${(unit_a[0].name).toUpperCase()} unit`)
+        newArray(unit_a, unit_b)
     }
     selected(player_a)
 }
