@@ -38,31 +38,27 @@ const starCraft = {
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
     while (true) {
-        if (ground_a[0].health || ground_b[0].health <= 0) {
+        if ( ground_b[0].health === 0) {
             console.log('Stage #4: Ground battle has finished.')
-            console.log(`Stage #4: ${ground_a[0].name.toUpperCase()} unit ended with ${ground_a[0].health} points.`)
-            console.log(`Stage #4: ${ground_b[0].name.toUpperCase()} unit ended with ${ground_b[0].health} points.`)
-            break;
+            console.log(`Score: ${ground_a[0].name.toUpperCase()} unit ended with ${ground_a[0].health} points.`)
+            console.log(`Score: ${ground_b[0].name.toUpperCase()} unit ended with ${ground_b[0].health} points.`)
+            break
         }
-        ground_a[0].health -= ground_b[0].attack.ground
-        ground_b[0].health -= ground_a[0].attack.ground
+        ground_a[0].health = ground_a[0].health - ground_b[0].attack.ground
+        ground_b[0].health = ground_b[0].health - ground_a[0].attack.ground
+        console.log(`Battle: ${ground_a[0].name.toUpperCase()} has ${ground_a[0].health} points.`)
+        console.log(`Battle: ${ground_b[0].name.toUpperCase()} has ${ground_b[0].health} points.`)
     }
-    // Get unit sight (while)
-    // Battle advantage by sight (comparison)
+    // ToDo: Get unit sight (if)
+    // ToDo: Battle advantage by sight (comparison)
+    // ToDo: Include the rest of the property values (mathematical operation)
 }
-
-// Air VS Air
-function battleAA(air_a, air_b) {}
 
 // Define Battle
 function battleType(type_a, type_b) {
     if (type_a[0].unit_type && type_b[0].unit_type === 'ground') {
         console.log(`Stage #3: This is a ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
         battleGG(type_a, type_b)
-    }
-    if (type_a[0].unit_type && type_b[0].unit_type === 'air') {
-        console.log(`Stage #3: This is an ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
-        battleAA(type_a, type_b)
     }
 }
 
