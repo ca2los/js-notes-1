@@ -50,9 +50,11 @@ function battleGG(ground_a, ground_b) {
         console.log(`Battle: ${ground_a[0].name.toUpperCase()} has ${ground_a[0].health} points.`)
         console.log(`Battle: ${ground_b[0].name.toUpperCase()} has ${ground_b[0].health} points.`)
     }
-    // ToDo: Get unit sight (if)
-    // ToDo: Battle advantage by sight (comparison)
-    // ToDo: Include the rest of the property values (mathematical operation)
+    // ToDo: Consider unit sight for advantage on combat (if)
+    // ToDo: Consider unit attack_range for damage advantage (if)
+    // ToDo: Consider unit armor to repel health damage (if)
+    // ToDo: Air VS Air
+    // ToDo: Air VS Ground
 }
 
 // Define Battle
