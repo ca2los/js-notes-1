@@ -35,10 +35,19 @@ const starCraft = {
     ]
 }
 
+// Ground VS Ground
+function battleGG(ground_a, ground_b) {
+
+}
+
 // Define Battle
 function battleType(type_a, type_b) {
+    if (type_a[0].unit_type && type_b[0].unit_type === 'ground') {
+        console.log(`Stage #3: This is a ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
+        battleGG(type_a, type_b)
+    }
     // Get unit type (if)
-    // Get unit sight (if)
+    // Get unit sight (while)
     // Battle type logic (while)
     // Battle advantage by sight (comparison)
     // Battle iteration (loop)
