@@ -37,8 +37,22 @@ const starCraft = {
 
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
-
+    while (true) {
+        if (ground_a[0].health || ground_b[0].health <= 0) {
+            console.log('Stage #4: Ground battle has finished.')
+            console.log(`Stage #4: ${ground_a[0].name.toUpperCase()} unit ended with ${ground_a[0].health} points.`)
+            console.log(`Stage #4: ${ground_b[0].name.toUpperCase()} unit ended with ${ground_b[0].health} points.`)
+            break;
+        }
+        ground_a[0].health -= ground_b[0].attack.ground
+        ground_b[0].health -= ground_a[0].attack.ground
+    }
+    // Get unit sight (while)
+    // Battle advantage by sight (comparison)
 }
+
+// Air VS Air
+function battleAA(air_a, air_b) {}
 
 // Define Battle
 function battleType(type_a, type_b) {
@@ -46,12 +60,10 @@ function battleType(type_a, type_b) {
         console.log(`Stage #3: This is a ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
         battleGG(type_a, type_b)
     }
-    // Get unit type (if)
-    // Get unit sight (while)
-    // Battle type logic (while)
-    // Battle advantage by sight (comparison)
-    // Battle iteration (loop)
-    // Battle result (break)
+    if (type_a[0].unit_type && type_b[0].unit_type === 'air') {
+        console.log(`Stage #3: This is an ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
+        battleAA(type_a, type_b)
+    }
 }
 
 // New array
