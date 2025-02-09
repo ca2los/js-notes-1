@@ -55,6 +55,7 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Consider unit armor to repel health damage (if)
     // ToDo: Air VS Air
     // ToDo: Air VS Ground
+    // ToDo: Loser and Winner messages.
 }
 
 // Define Battle
