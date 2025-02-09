@@ -38,14 +38,15 @@ const starCraft = {
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
     while (true) {
-        if ( ground_b[0].health === 0) {
+        if (ground_a[0].health <= 0 || ground_b[0].health <= 0) {
             console.log('Stage #4: Ground battle has finished.')
             console.log(`Score: ${ground_a[0].name.toUpperCase()} unit ended with ${ground_a[0].health} points.`)
             console.log(`Score: ${ground_b[0].name.toUpperCase()} unit ended with ${ground_b[0].health} points.`)
+            console.log(ground_a, ground_b)
             break
         }
-        ground_a[0].health = ground_a[0].health - ground_b[0].attack.ground
-        ground_b[0].health = ground_b[0].health - ground_a[0].attack.ground
+        ground_a[0].health -= ground_b[0].attack.ground
+        ground_b[0].health -= ground_a[0].attack.ground
         console.log(`Battle: ${ground_a[0].name.toUpperCase()} has ${ground_a[0].health} points.`)
         console.log(`Battle: ${ground_b[0].name.toUpperCase()} has ${ground_b[0].health} points.`)
     }
@@ -56,7 +57,7 @@ function battleGG(ground_a, ground_b) {
 
 // Define Battle
 function battleType(type_a, type_b) {
-    if (type_a[0].unit_type && type_b[0].unit_type === 'ground') {
+    if (type_a[0].unit_type === 'ground' && type_b[0].unit_type === 'ground') {
         console.log(`Stage #3: This is a ${type_a[0].unit_type.toUpperCase()} vs ${type_b[0].unit_type.toUpperCase()} battle.`)
         battleGG(type_a, type_b)
     }
@@ -64,23 +65,22 @@ function battleType(type_a, type_b) {
 
 // New array
 function newArray(array_a, array_b) {
-    let unitBlock = item => {
-        const container = {}
-        container.name = item.name
-        container.health = item.health
-        container.armor = item.armor
-        container.attack = item.attack.ground
-        container.attack_range = item.attack_range
-        container.sight = item.sight
-        container.unit_type = item.unit_type
-        return container
-    }
+    let unitBlock = item => ({
+        name: item.name,
+        health: item.health,
+        armor: item.armor,
+        attack: { ground: item.attack.ground, air: item.attack.ground }, // air and ground are duplicated
+        attack_range: item.attack_range,
+        sight: item.sight,
+        unit_type: item.unit_type
+    })
 
-    // Create Arrays For Battle
-    array_a = array_a.map(unitBlock)
-    array_b = array_b.map(unitBlock)
+    array_a = array_a.map(unitBlock) // Create Arrays For Battle
+    array_b = array_b.map(unitBlock) // Create Arrays For Battle
+
     console.log(`Stage #2: Player A|B new arrays for -> ${array_a[0].name.toUpperCase()} & ${array_b[0].name.toUpperCase()}`)
     console.log(array_a, array_b)
+
     battleType(array_a, array_b)
 }
 
