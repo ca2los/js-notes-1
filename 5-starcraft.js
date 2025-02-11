@@ -98,6 +98,13 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Air VS Air
     // ToDo: Air VS Ground
     // ToDo: Loser and Winner messages.
+
+    if (ground_a[0].sight > ground_b[0].sight) {
+        // Subtraction of both sights
+        // Retrieve the value and multiply it by the ground attack
+        // Subtraction of the value against the health of the foe
+        // Then start the battle
+    }
 }
 
 // Define Battle
