@@ -5,6 +5,20 @@
 
 // Units
 const starCraft = {
+    battlecruiser: [
+        {
+            name: 'battlecruiser',
+            health: 500,
+            armor: 3,
+            attack: {
+                air: 25,
+                ground: 25
+            },
+            attack_range: 6,
+            sight: 11,
+            unit_type: 'air'
+        }
+    ],
     firebat: [
         {
             name: 'firebat',
@@ -12,7 +26,7 @@ const starCraft = {
             armor: 1,
             attack: {
                 air: 0,
-                ground: 8,
+                ground: 8
             },
             attack_range: 2,
             sight: 7,
@@ -26,7 +40,7 @@ const starCraft = {
             armor: 0,
             attack: {
                 air: 6,
-                ground: 6,
+                ground: 6
             },
             attack_range: 4,
             sight: 6,
@@ -40,7 +54,7 @@ const starCraft = {
             armor: 0,
             attack: {
                 air: 10,
-                ground: 10,
+                ground: 10
             },
             attack_range: 7,
             sight: 9,
@@ -54,7 +68,7 @@ const starCraft = {
             armor: 0,
             attack: {
                 air: 20,
-                ground: 8,
+                ground: 8
             },
             attack_range: 5,
             sight: 7,
