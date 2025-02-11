@@ -32,6 +32,34 @@ const starCraft = {
             sight: 6,
             unit_type: 'ground'
         }
+    ],
+    ghost: [
+        {
+            name: 'ghost',
+            health: 45,
+            armor: 0,
+            attack: {
+                air: 10,
+                ground: 10,
+            },
+            attack_range: 7,
+            sight: 9,
+            unit_type: 'ground'
+        }
+    ],
+    wraith: [
+        {
+            name: 'wraith',
+            health: 120,
+            armor: 0,
+            attack: {
+                air: 20,
+                ground: 8,
+            },
+            attack_range: 5,
+            sight: 7,
+            unit_type: 'air'
+        }
     ]
 }
 
