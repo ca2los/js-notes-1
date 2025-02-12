@@ -100,6 +100,11 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Loser and Winner messages.
 
     if (ground_a[0].sight > ground_b[0].sight) {
+        let advantage_a = ground_a[0].sight - ground_b[0].sight
+        let advantage_b = ground_b[0].sight - ground_a[0].sight
+        // Operation to consume both varibles until they reach zero
+        // Then initialize the while loop at the top
+
         // Subtraction of both sights
         // Retrieve the value and multiply it by the ground attack
         // Subtraction of the value against the health of the foe
