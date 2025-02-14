@@ -102,8 +102,8 @@ function battleGG(ground_a, ground_b) {
     if (ground_a[0].sight > ground_b[0].sight) {
         let advantage_a = ground_a[0].sight - ground_b[0].sight
         let advantage_b = ground_b[0].sight - ground_a[0].sight
-        // I have to pay attention to this operation concept to improve the data retrieval
-        // Operation to consume both varibles until they reach zero
+        // Improve the data retrieval and math logic
+        // Operation to consume both variables until they reach zero
         // Then initialize the while loop at the top
 
         // Subtraction of both sights
