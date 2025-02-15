@@ -100,16 +100,11 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Loser and Winner messages.
 
     if (ground_a[0].sight > ground_b[0].sight) {
-        let advantage_a = ground_a[0].sight - ground_b[0].sight
-        let advantage_b = ground_b[0].sight - ground_a[0].sight
-        // Improve the data retrieval and math logic
-        // Operation to consume both variables until they reach zero
-        // Then initialize the while loop at the top
+        let advantage = ground_a[0].attack.ground * (ground_a[0].sight - ground_b[0].sight)
 
-        // Subtraction of both sights
-        // Retrieve the value and multiply it by the ground attack
-        // Subtraction of the value against the health of the foe
-        // Then start the battle
+        // Take the "if" condition out of battleGG()
+        // Invoke a function in the ground_a and ground_b iteration
+        // The function must be a global operation
     }
 }
 
