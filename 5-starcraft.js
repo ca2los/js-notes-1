@@ -97,7 +97,6 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Consider unit armor to repel health damage (if)
     // ToDo: Air VS Air
     // ToDo: Air VS Ground
-    // ToDo: Loser and Winner messages.
 
     if (ground_a[0].sight > ground_b[0].sight) {
         let advantage = ground_a[0].attack.ground * (ground_a[0].sight - ground_b[0].sight)
