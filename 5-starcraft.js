@@ -104,6 +104,7 @@ function battleGG(ground_a, ground_b) {
         // Take the "if" condition out of battleGG()
         // Invoke a function in the ground_a and ground_b iteration
         // The function must be a global operation
+        // Create the operation as a new program
     }
 }
 
