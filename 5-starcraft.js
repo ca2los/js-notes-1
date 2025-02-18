@@ -79,19 +79,7 @@ const starCraft = {
 
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
-    while (true) {
-        if (ground_a[0].health <= 0 || ground_b[0].health <= 0) {
-            console.log('Stage #4: Ground battle has finished.')
-            console.log(`Score: ${ground_a[0].name.toUpperCase()} unit ended with ${ground_a[0].health} points.`)
-            console.log(`Score: ${ground_b[0].name.toUpperCase()} unit ended with ${ground_b[0].health} points.`)
-            console.log(ground_a, ground_b)
-            break
-        }
-        ground_a[0].health -= ground_b[0].attack.ground
-        ground_b[0].health -= ground_a[0].attack.ground
-        console.log(`Battle: ${ground_a[0].name.toUpperCase()} has ${ground_a[0].health} points.`)
-        console.log(`Battle: ${ground_b[0].name.toUpperCase()} has ${ground_b[0].health} points.`)
-    }
+
     // ToDo: Consider unit sight for advantage on combat (if)
     // ToDo: Consider unit attack_range for damage advantage (if)
     // ToDo: Consider unit armor to repel health damage (if)
@@ -99,11 +87,24 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Air VS Ground
 
     function sightIs(char1, char2) {
-        
+        let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
+        char2[0].health -= advantage
+        while (true) {
+            if (char1[0].health <= 0 || char2[0].health <= 0) {
+                console.log('Stage #4: Ground battle has finished.')
+                console.log(`Score: ${char1[0].name.toUpperCase()} unit ended with ${char1[0].health} points.`)
+                console.log(`Score: ${char2[0].name.toUpperCase()} unit ended with ${char2[0].health} points.`)
+                console.log(char1, char2)
+                break
+            }
+            char1[0].health -= char2[0].attack.ground
+            char2[0].health -= char1[0].attack.ground
+            console.log(`Battle: ${char1[0].name.toUpperCase()} has ${char1[0].health} points.`)
+            console.log(`Battle: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
+        }
     }
-    
-    let advantage = ground_a[0].attack.ground * (ground_a[0].sight - ground_b[0].sight)
-    
+
+
     if (ground_a[0].sight > ground_b[0].sight) {
         sightIs(ground_a, ground_b)
     }
