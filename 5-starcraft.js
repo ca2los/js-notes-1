@@ -98,13 +98,14 @@ function battleGG(ground_a, ground_b) {
     // ToDo: Air VS Air
     // ToDo: Air VS Ground
 
+    function sightIs(char1, char2) {
+        
+    }
+    
+    let advantage = ground_a[0].attack.ground * (ground_a[0].sight - ground_b[0].sight)
+    
     if (ground_a[0].sight > ground_b[0].sight) {
-        let advantage = ground_a[0].attack.ground * (ground_a[0].sight - ground_b[0].sight)
-
-        // Take the "if" condition out of battleGG()
-        // Invoke a function in the ground_a and ground_b iteration
-        // The function must be a global operation
-        // Create the operation as a new program
+        sightIs(ground_a, ground_b)
     }
 }
 
