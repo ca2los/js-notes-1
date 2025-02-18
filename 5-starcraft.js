@@ -89,6 +89,7 @@ function battleGG(ground_a, ground_b) {
     function sightIs(char1, char2) {
         let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
         char2[0].health -= advantage
+        // Consider a message to display
         while (true) {
             if (char1[0].health <= 0 || char2[0].health <= 0) {
                 console.log('Stage #4: Ground battle has finished.')
@@ -102,8 +103,8 @@ function battleGG(ground_a, ground_b) {
             console.log(`Battle: ${char1[0].name.toUpperCase()} has ${char1[0].health} points.`)
             console.log(`Battle: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
         }
+        // Consider armor
     }
-
 
     if (ground_a[0].sight > ground_b[0].sight) {
         sightIs(ground_a, ground_b)
