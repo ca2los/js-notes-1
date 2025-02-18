@@ -89,6 +89,7 @@ function battleGG(ground_a, ground_b) {
     function sightIs(char1, char2) {
         let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
         char2[0].health -= advantage
+        console.log(`Earlier: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
         // Consider a message to display
         while (true) {
             if (char1[0].health <= 0 || char2[0].health <= 0) {
