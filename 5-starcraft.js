@@ -109,6 +109,12 @@ function battleGG(ground_a, ground_b) {
     if (ground_a[0].sight > ground_b[0].sight) {
         sightIs(ground_a, ground_b)
     }
+    if (ground_b[0].sight > ground_a[0].sight) {
+        sightIs(ground_b, ground_a)
+    }
+    if (ground_a[0].sight === ground_b[0].sight) {
+        sightIs(ground_a, ground_b)
+    }
 }
 
 // Define Battle
