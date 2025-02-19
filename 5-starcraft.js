@@ -89,8 +89,8 @@ function battleGG(ground_a, ground_b) {
     function sightIs(char1, char2) {
         let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
         char2[0].health -= advantage
-        console.log(`Message: ${char2[0].name.toUpperCase()} in range.`)
-        console.log(`First Battle: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
+        console.log(`In range: ${char2[0].name.toUpperCase()} has been detected by ${char1[0].name.toUpperCase()}.`)
+        console.log(`Attacked: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
         while (true) {
             if (char1[0].health <= 0 || char2[0].health <= 0) {
                 console.log('Stage #4: Ground battle has finished.')
@@ -101,8 +101,8 @@ function battleGG(ground_a, ground_b) {
             }
             char1[0].health = (char1[0].health + char1[0].armor) - char2[0].attack.ground
             char2[0].health = (char2[0].health + char2[0].armor) - char1[0].attack.ground
-            console.log(`Battle: ${char1[0].name.toUpperCase()} has ${char1[0].health} points.`)
-            console.log(`Battle: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
+            console.log(`Attacked: ${char1[0].name.toUpperCase()} has ${char1[0].health} points.`)
+            console.log(`Attacked: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
         }
     }
 
