@@ -106,7 +106,7 @@ function battleGG(ground_a, ground_b) {
         }
     }
 
-    if (ground_a[0].sight > ground_b[0].sight) {
+    if (ground_a[0].sight > ground_b[0].sight) { // Proceed with other units
         sightIs(ground_a, ground_b)
     }
     if (ground_b[0].sight > ground_a[0].sight) {
