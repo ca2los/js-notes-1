@@ -149,7 +149,7 @@ function newArray(array_a, array_b) {
 // Select Units
 function selectUnits() {
     let player_a = starCraft.firebat
-    let player_b = starCraft.marine
+    let player_b = starCraft.ghost //marine
 
     // Confirm Units
     if (player_a && player_b) {
