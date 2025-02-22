@@ -134,8 +134,8 @@ function newArray(array_a, array_b) {
         unit_type: item.unit_type
     })
 
-    array_a = array_a.map(unitBlock) // It Create New Arrays For Battle
-    array_b = array_b.map(unitBlock) // It Create New Arrays For Battle
+    array_a = array_a.map(unitBlock) // It Creates a New Array for Battle
+    array_b = array_b.map(unitBlock) // It Creates a New Array for Battle
 
     console.log(`Stage #2: Player A|B new arrays for -> ${array_a[0].name.toUpperCase()} & ${array_b[0].name.toUpperCase()}`)
     console.log(array_a, array_b)
