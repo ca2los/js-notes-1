@@ -80,11 +80,8 @@ const starCraft = {
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
 
-    // ToDo: Consider unit sight for advantage on combat (if)
-    // ToDo: Consider unit attack_range for damage advantage (if)
-    // ToDo: Consider unit armor to repel health damage (if)
     // ToDo: Air VS Air
-    // ToDo: Air VS Ground
+    // ToDo: Air VS Ground || Ground VS Air
 
     function sightIs(char1, char2) {
         let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
@@ -137,8 +134,8 @@ function newArray(array_a, array_b) {
         unit_type: item.unit_type
     })
 
-    array_a = array_a.map(unitBlock) // Create Arrays For Battle
-    array_b = array_b.map(unitBlock) // Create Arrays For Battle
+    array_a = array_a.map(unitBlock) // It Create New Arrays For Battle
+    array_b = array_b.map(unitBlock) // It Create New Arrays For Battle
 
     console.log(`Stage #2: Player A|B new arrays for -> ${array_a[0].name.toUpperCase()} & ${array_b[0].name.toUpperCase()}`)
     console.log(array_a, array_b)
@@ -148,8 +145,8 @@ function newArray(array_a, array_b) {
 
 // Select Units
 function selectUnits() {
-    let player_a = starCraft.firebat
-    let player_b = starCraft.ghost //marine
+    let player_a = starCraft.firebat // ghost or marine
+    let player_b = starCraft.marine //ghost or firebat
 
     // Confirm Units
     if (player_a && player_b) {
