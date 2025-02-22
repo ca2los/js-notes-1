@@ -128,7 +128,7 @@ function newArray(array_a, array_b) {
         name: item.name,
         health: item.health,
         armor: item.armor,
-        attack: { ground: item.attack.ground, air: item.attack.ground }, // air and ground are duplicated
+        attack: { ground: item.attack.ground, air: item.attack.air }, // air and ground are duplicated
         attack_range: item.attack_range,
         sight: item.sight,
         unit_type: item.unit_type
