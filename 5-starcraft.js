@@ -80,9 +80,6 @@ const starCraft = {
 // Ground VS Ground
 function battleGG(ground_a, ground_b) {
 
-    // ToDo: Air VS Air
-    // ToDo: Air VS Ground || Ground VS Air
-
     function sightIs(char1, char2) {
         let advantage = char1[0].attack.ground * (char1[0].sight - char2[0].sight)
         char2[0].health -= advantage
