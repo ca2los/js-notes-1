@@ -142,8 +142,8 @@ function newArray(array_a, array_b) {
 
 // Select Units
 function selectUnits() {
-    let player_a = starCraft.firebat // ghost or marine
-    let player_b = starCraft.marine //ghost or firebat
+    let player_a = starCraft.firebat // access to any unit: ghost or marine
+    let player_b = starCraft.marine // access to any unit: ghost or firebat
 
     // Confirm Units
     if (player_a && player_b) {
