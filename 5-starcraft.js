@@ -169,5 +169,3 @@ function startBattle(initialize) {
 // Initialize Battle
 const start_battle = true
 startBattle(start_battle)
-
-// Create the project for DOM interaction
