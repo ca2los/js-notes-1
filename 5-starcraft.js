@@ -14,7 +14,7 @@ const starCraft = {
                 air: 25,
                 ground: 25
             },
-            attack_range: 6,
+            //attack_range: 6,
             sight: 11,
             unit_type: 'air'
         }
@@ -28,7 +28,7 @@ const starCraft = {
                 air: 0,
                 ground: 8
             },
-            attack_range: 2,
+            //attack_range: 2,
             sight: 7,
             unit_type: 'ground'
         }
@@ -42,7 +42,7 @@ const starCraft = {
                 air: 6,
                 ground: 6
             },
-            attack_range: 4,
+            //attack_range: 4,
             sight: 6,
             unit_type: 'ground'
         }
@@ -56,7 +56,7 @@ const starCraft = {
                 air: 10,
                 ground: 10
             },
-            attack_range: 7,
+            //attack_range: 7,
             sight: 9,
             unit_type: 'ground'
         }
@@ -70,7 +70,7 @@ const starCraft = {
                 air: 20,
                 ground: 8
             },
-            attack_range: 5,
+            //attack_range: 5,
             sight: 7,
             unit_type: 'air'
         }
@@ -126,7 +126,7 @@ function newArray(array_a, array_b) {
         health: item.health,
         armor: item.armor,
         attack: { ground: item.attack.ground, air: item.attack.air },
-        attack_range: item.attack_range,
+        //attack_range: item.attack_range,
         sight: item.sight,
         unit_type: item.unit_type
     })
