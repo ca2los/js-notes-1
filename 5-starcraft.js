@@ -88,15 +88,15 @@ function battleGG(ground_a, ground_b) {
         while (true) {
             if (char1[0].health <= 0 || char2[0].health <= 0) {
                 console.log('Stage #4: Ground battle has finished.')
-                console.log(`Score: ${char1[0].name.toUpperCase()} unit ended with ${char1[0].health} points.`)
-                console.log(`Score: ${char2[0].name.toUpperCase()} unit ended with ${char2[0].health} points.`)
+                console.log(`Score: ${char1[0].name.toUpperCase()} unit ended with ${Math.max(0, char1[0].health)} points.`)
+                console.log(`Score: ${char2[0].name.toUpperCase()} unit ended with ${Math.max(0, char2[0].health)} points.`)
                 console.log(char1, char2)
                 break
             }
             char1[0].health = (char1[0].health + char1[0].armor) - char2[0].attack.ground
             char2[0].health = (char2[0].health + char2[0].armor) - char1[0].attack.ground
-            console.log(`Attacked: ${char1[0].name.toUpperCase()} has ${char1[0].health} points.`)
-            console.log(`Attacked: ${char2[0].name.toUpperCase()} has ${char2[0].health} points.`)
+            console.log(`Attacked: ${char1[0].name.toUpperCase()} has ${Math.max(0, char1[0].health)} points.`)
+            console.log(`Attacked: ${char2[0].name.toUpperCase()} has ${Math.max(0, char2[0].health)} points.`)
         }
     }
 
@@ -143,7 +143,7 @@ function newArray(array_a, array_b) {
 // Select Units
 function selectUnits() {
     let player_a = starCraft.firebat // access to any unit: ghost or marine
-    let player_b = starCraft.marine // access to any unit: ghost or firebat
+    let player_b = starCraft.ghost // access to any unit: ghost or firebat
 
     // Confirm Units
     if (player_a && player_b) {
